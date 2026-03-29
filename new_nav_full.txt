@@ -1,0 +1,391 @@
+<!-- Ultra Modern Floating Navbar Start -->
+  <style>
+    /* Ultra Modern Glassmorphism Navbar CSS */
+    .ultra-nav-wrapper {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 1300px;
+        z-index: 1100;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ultra-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 100px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+        padding: 6px 14px 6px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ultra-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+    }
+    .ultra-brand:hover {
+        transform: scale(1.02);
+    }
+    .ultra-brand img {
+        height: 45px;
+        width: auto;
+        object-fit: contain;
+    }
+    .ultra-links {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 100%;
+    }
+    .ultra-link-item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .ultra-link {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #334155;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 12px 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+    }
+    .ultra-link:hover, .ultra-link.active {
+        color: #0f172a;
+    }
+    .ultra-link i.chevron {
+        font-size: 0.7rem;
+        margin-top: 2px;
+        transition: transform 0.3s ease;
+    }
+    .ultra-link-item:hover .ultra-link i.chevron {
+        transform: rotate(180deg);
+    }
+    
+    .ultra-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .ultra-cta {
+        background: #0f172a;
+        color: #ffffff !important;
+        padding: 10px 22px;
+        border-radius: 100px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+        white-space: nowrap;
+    }
+    .ultra-cta:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+    
+    .ultra-call-icon {
+        width: 40px;
+        height: 40px;
+        background: #22c55e;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+    }
+    .ultra-call-icon:hover {
+        background: #16a34a;
+        transform: scale(1.08);
+    }
+    
+    /* Elegant Hover Dropdown (Less wide than Mega to fit more items) */
+    .elegant-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px) scale(0.95);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.02);
+        padding: 12px;
+        width: max-content;
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+        transform-origin: top center;
+    }
+    .ultra-link-item:hover .elegant-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(5px) scale(1);
+        pointer-events: auto;
+    }
+    .dropdown-item-modern {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #334155;
+        padding: 10px 14px;
+        border-radius: 10px;
+        transition: all 0.2s;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    .dropdown-item-modern:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+        transform: translateX(4px);
+    }
+    .dropdown-item-modern i {
+        color: #2563eb;
+        width: 20px;
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    /* Special Wide Grid for Tours/Packages */
+    .grid-dropdown {
+        min-width: 440px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 16px;
+        gap: 8px;
+    }
+
+    /* Mobile handling */
+    .ultra-mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #0f172a;
+        cursor: pointer;
+        padding: 4px;
+    }
+    @media (max-width: 1199px) { /* Adjust breakpoint due to many items */
+        .ultra-links, .ultra-actions {
+            display: none !important;
+        }
+        .ultra-mobile-toggle {
+            display: block;
+        }
+        .ultra-nav-wrapper {
+            top: 15px;
+            width: 92%;
+        }
+    }
+
+    /* Simple mobile nav backdrop */
+    .ultra-mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 1200;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px 40px;
+        overflow-y: auto;
+        gap: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(-20px);
+    }
+    .ultra-mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .ultra-mobile-menu a {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #0f172a;
+        text-decoration: none;
+        transition: color 0.2s;
+        text-align: center;
+    }
+    .ultra-mobile-menu a:hover {
+        color: #2563eb;
+    }
+    .mobile-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #f1f5f9;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        color: #0f172a;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        z-index: 1201;
+    }
+    .mobile-close:hover {
+        background: #e2e8f0;
+    }
+  </style>
+
+  <div class="ultra-nav-wrapper">
+    <nav class="ultra-nav">
+      <!-- Changed Logo Here -->
+      <a href="index.html" class="ultra-brand">
+        <img src="img/brand-logo.png" alt="Budget Trips Logo">
+      </a>
+      
+      <ul class="ultra-links">
+        <li class="ultra-link-item"><a href="index.html" class="ultra-link active">Home</a></li>
+        <li class="ultra-link-item"><a href="about.html" class="ultra-link">About</a></li>
+        
+        <!-- Services -->
+        <li class="ultra-link-item">
+          <a href="service.html" class="ultra-link" style="cursor: pointer;">
+            Services <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown border-0">
+            <a href="taxi-services.html" class="dropdown-item-modern"><i class="fas fa-taxi"></i> Taxi Services</a>
+            <a href="hotel-booking.html" class="dropdown-item-modern"><i class="fas fa-hotel"></i> Hotel Booking</a>
+            <a href="bus-tour-booking.html" class="dropdown-item-modern"><i class="fas fa-bus"></i> Bus Tour Booking</a>
+            <a href="outstation-tours.html" class="dropdown-item-modern"><i class="fas fa-route"></i> Outstation Tours</a>
+          </div>
+        </li>
+
+        <!-- Tours (Grid Dropdown) -->
+        <li class="ultra-link-item">
+          <a href="amritsar-to-manali.html" class="ultra-link" style="cursor: pointer;">
+            Tours <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown grid-dropdown">
+            <a href="amritsar-to-manali.html" class="dropdown-item-modern"><i class="fas fa-mountain"></i> Amritsar to Manali</a>
+            <a href="amritsar-to-mussoorie.html" class="dropdown-item-modern"><i class="fas fa-tree"></i> Amritsar to Mussoorie</a>
+            <a href="amritsar-to-shimla.html" class="dropdown-item-modern"><i class="fas fa-snowflake"></i> Amritsar to Shimla</a>
+            <a href="amritsar-to-nainital.html" class="dropdown-item-modern"><i class="fas fa-water"></i> Amritsar to Nainital</a>
+            <a href="amritsar-to-kasol.html" class="dropdown-item-modern"><i class="fas fa-campground"></i> Amritsar to Kasol</a>
+            <a href="amritsar-to-auli.html" class="dropdown-item-modern"><i class="fas fa-skiing"></i> Amritsar to Auli</a>
+            <a href="amritsar-to-dharamshala.html" class="dropdown-item-modern"><i class="fas fa-vihara"></i> Amritsar to Dharamshala</a>
+          </div>
+        </li>
+
+        <!-- Vehicles -->
+        <li class="ultra-link-item">
+          <a href="swift.html" class="ultra-link" style="cursor: pointer;">
+            Vehicles <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown border-0">
+            <a href="swift.html" class="dropdown-item-modern"><i class="fas fa-car-side"></i> Swift Dzire</a>
+            <a href="Sedan.html" class="dropdown-item-modern"><i class="fas fa-car"></i> Sedan Cars</a>
+            <a href="ertiga.html" class="dropdown-item-modern"><i class="fas fa-shuttle-van"></i> Ertiga</a>
+            <a href="Innova.html" class="dropdown-item-modern"><i class="fas fa-truck-pickup"></i> Innova</a>
+            <a href="Maharaja.html" class="dropdown-item-modern"><i class="fas fa-bus-alt"></i> Maharaja Tempo</a>
+            <a href="Urbania.html" class="dropdown-item-modern"><i class="fas fa-van-utilities"></i> Urbania</a>
+          </div>
+        </li>
+
+        <!-- Packages -->
+        <li class="ultra-link-item">
+          <a href="#" class="ultra-link" style="cursor: pointer;">
+            Packages <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown border-0">
+            <a href="golden-triangle-india.html" class="dropdown-item-modern"><i class="fas fa-map-marked-alt"></i> Golden Triangle</a>
+            <a href="rural-punjab-experience.html" class="dropdown-item-modern"><i class="fas fa-tractor"></i> Rural Punjab</a>
+            <a href="scenic-himachal-escape.html" class="dropdown-item-modern"><i class="fas fa-mountain"></i> Himachal Escape</a>
+            <a href="vashino_devi.html" class="dropdown-item-modern"><i class="fas fa-om"></i> Vaishno Devi</a>
+            <a href="amritsar-heritage-tour.html" class="dropdown-item-modern"><i class="fas fa-gopuram"></i> Amritsar Heritage</a>
+          </div>
+        </li>
+        
+        <!-- Resources -->
+        <li class="ultra-link-item">
+          <a href="#" class="ultra-link" style="cursor: pointer;">
+            Resources <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown border-0">
+            <a href="privacy_policy.html" class="dropdown-item-modern"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="term&condition.html" class="dropdown-item-modern"><i class="fas fa-file-contract"></i> Term & Conditions</a>
+            <a href="testimonial.html" class="dropdown-item-modern"><i class="fas fa-star"></i> Testimonial</a>
+            <a href="faq.html" class="dropdown-item-modern"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        
+        <!-- Blogs -->
+        <li class="ultra-link-item">
+          <a href="#" class="ultra-link" style="cursor: pointer;">
+            Blogs <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="elegant-dropdown border-0">
+            <a href="Outstation Cabs from Amritsar.html" class="dropdown-item-modern"><i class="fas fa-blog"></i> Outstation Cabs</a>
+            <a href="amritsar-travel-guide.html" class="dropdown-item-modern"><i class="fas fa-book-reader"></i> Amritsar Guide</a>
+          </div>
+        </li>
+
+        <li class="ultra-link-item"><a href="contact.html" class="ultra-link">Contact</a></li>
+      </ul>
+
+      <div class="ultra-actions">
+        <a href="tel:9878120686" class="ultra-call-icon" title="Call Now">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a href="contact.html" class="ultra-cta">Get A Quote</a>
+      </div>
+
+      <button class="ultra-mobile-toggle" onclick="document.getElementById('ultra-mobile-menu').classList.add('active')">
+        <i class="bi bi-list"></i>
+      </button>
+    </nav>
+  </div>
+
+  <div id="ultra-mobile-menu" class="ultra-mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('ultra-mobile-menu').classList.remove('active')">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <img src="img/brand-logo.png" alt="Logo" style="height: 50px; margin: 0 auto 20px; object-fit: contain;">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="amritsar-to-manali.html">Tours</a>
+    <a href="swift.html">Vehicles</a>
+    <a href="golden-triangle-india.html">Packages</a>
+    <a href="privacy_policy.html">Resources</a>
+    <a href="amritsar-travel-guide.html">Blogs</a>
+    <a href="contact.html" class="ultra-cta" style="margin-top:20px; font-size:1.2rem; padding:16px 40px; display: inline-block;">Contact Us</a>
+  </div>
+<!-- Ultra Modern Floating Navbar End -->

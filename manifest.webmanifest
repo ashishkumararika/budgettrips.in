@@ -1,0 +1,58 @@
+{
+  "name": "Budgettrips - Amritsar Taxi & Tours",
+  "short_name": "Budgettrips",
+  "description": "Professional taxi service in Amritsar for airport transfers, Wagah Border trips, local sightseeing, and outstation travel.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "categories": ["travel", "transportation", "taxi"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "icons": [
+    { 
+      "src": "/img/favicon.png", 
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "any maskable" 
+    },
+    { 
+      "src": "/img/favicon.png", 
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable" 
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Call Taxi",
+      "short_name": "Call",
+      "description": "Call for immediate taxi booking",
+      "url": "tel:9878120686",
+      "icons": [{ "src": "/img/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "WhatsApp Booking",
+      "short_name": "WhatsApp",
+      "description": "Book taxi via WhatsApp",
+      "url": "https://wa.me/919878120686?text=Hi%2C%20I%20want%20to%20book%20a%20taxi",
+      "icons": [{ "src": "/img/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Airport Transfer",
+      "short_name": "Airport",
+      "description": "Book airport taxi service",
+      "url": "/index.html#airport",
+      "icons": [{ "src": "/img/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Wagah Border",
+      "short_name": "Wagah",
+      "description": "Book Wagah Border taxi",
+      "url": "/index.html#wagah",
+      "icons": [{ "src": "/img/favicon.png", "sizes": "96x96" }]
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+<!-- Ultra Modern Floating Navbar Start -->
+  <style>
+    /* Ultra Modern Glassmorphism Navbar CSS */
+    .ultra-nav-wrapper {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        max-width: 1100px;
+        z-index: 1100;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ultra-nav {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 100px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+        padding: 8px 16px 8px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ultra-brand {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: #0f172a;
+        text-decoration: none;
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .ultra-brand i {
+        color: #2563eb;
+    }
+    .ultra-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 100%;
+    }
+    .ultra-link-item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .ultra-link {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #475569;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 12px 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .ultra-link:hover, .ultra-link.active {
+        color: #0f172a;
+    }
+    .ultra-link i.chevron {
+        font-size: 0.75rem;
+        transition: transform 0.3s ease;
+    }
+    .ultra-link-item:hover .ultra-link i.chevron {
+        transform: rotate(180deg);
+    }
+    
+    .ultra-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    
+    .ultra-cta {
+        background: #0f172a;
+        color: #ffffff !important;
+        padding: 12px 28px;
+        border-radius: 100px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+    }
+    .ultra-cta:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+    
+    .ultra-call-icon {
+        width: 44px;
+        height: 44px;
+        background: #22c55e;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+    }
+    .ultra-call-icon:hover {
+        background: #16a34a;
+        transform: scale(1.08);
+    }
+    
+    /* Hover Magic Mega Menu */
+    .mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px) scale(0.95);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 24px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.02);
+        padding: 24px;
+        width: max-content;
+        min-width: 420px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+        transform-origin: top center;
+    }
+    .ultra-link-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(5px) scale(1);
+        pointer-events: auto;
+    }
+    .mega-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        text-decoration: none;
+        color: #0f172a;
+        padding: 14px;
+        border-radius: 16px;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mega-item:hover {
+        background: #f8fafc;
+        transform: translateX(4px);
+    }
+    .mega-icon {
+        background: #edf2f9;
+        color: #2563eb;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+    }
+    .mega-item:hover .mega-icon {
+        background: #2563eb;
+        color: #ffffff;
+    }
+    .mega-text h4 {
+        margin: 0 0 4px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    .mega-text p {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 0.82rem;
+        color: #64748b;
+        line-height: 1.4;
+    }
+
+    /* Mobile handling */
+    .ultra-mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #0f172a;
+        cursor: pointer;
+        padding: 4px;
+    }
+    @media (max-width: 991px) {
+        .ultra-links, .ultra-actions {
+            display: none !important;
+        }
+        .ultra-mobile-toggle {
+            display: block;
+        }
+        .ultra-nav-wrapper {
+            top: 15px;
+            width: 92%;
+        }
+        .ultra-nav {
+            padding: 12px 24px;
+        }
+    }
+    /* Simple mobile nav backdrop */
+    .ultra-mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 1200;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(-20px);
+    }
+    .ultra-mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .ultra-mobile-menu a {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #0f172a;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .ultra-mobile-menu a:hover {
+        color: #2563eb;
+    }
+    .mobile-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: #f1f5f9;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        color: #0f172a;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+    }
+    .mobile-close:hover {
+        background: #e2e8f0;
+    }
+  </style>
+
+  <div class="ultra-nav-wrapper">
+    <nav class="ultra-nav">
+      <a href="index.html" class="ultra-brand">
+        <i class="bi bi-geo-alt-fill"></i> BudgetTrips
+      </a>
+      
+      <ul class="ultra-links">
+        <li class="ultra-link-item"><a href="index.html" class="ultra-link active">Home</a></li>
+        <li class="ultra-link-item"><a href="about.html" class="ultra-link">About</a></li>
+        
+        <!-- Services Dropdown (Apple Style) -->
+        <li class="ultra-link-item">
+          <a href="service.html" class="ultra-link" style="cursor: pointer;">
+            Services <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="mega-menu">
+            <a href="taxi-services.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-taxi"></i></div>
+              <div class="mega-text">
+                <h4>Taxi Services</h4>
+                <p>Premium airport & local cabs</p>
+              </div>
+            </a>
+            <a href="hotel-booking.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-hotel"></i></div>
+              <div class="mega-text">
+                <h4>Hotel Booking</h4>
+                <p>Best stays at budget prices</p>
+              </div>
+            </a>
+            <a href="bus-tour-booking.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-bus"></i></div>
+              <div class="mega-text">
+                <h4>Bus Tours</h4>
+                <p>Group travel across Punjab</p>
+              </div>
+            </a>
+            <a href="outstation-tours.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-route"></i></div>
+              <div class="mega-text">
+                <h4>Outstation</h4>
+                <p>Long distance trips handled</p>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Tours Dropdown -->
+        <li class="ultra-link-item">
+          <a href="amritsar-to-manali.html" class="ultra-link" style="cursor: pointer;">
+            Tours <i class="bi bi-chevron-down chevron"></i>
+          </a>
+          <div class="mega-menu" style="min-width: 550px; grid-template-columns: 1fr 1fr 1fr;">
+            <a href="amritsar-to-manali.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-mountain"></i></div>
+              <div class="mega-text"><h4>Manali</h4><p>Snow Peaks</p></div>
+            </a>
+            <a href="amritsar-to-shimla.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-snowflake"></i></div>
+              <div class="mega-text"><h4>Shimla</h4><p>Queen of Hills</p></div>
+            </a>
+            <a href="golden-triangle-india.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-map-marked-alt"></i></div>
+              <div class="mega-text"><h4>Golden Triangle</h4><p>Iconic Tour</p></div>
+            </a>
+            <a href="amritsar-to-dharamshala.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-vihara"></i></div>
+              <div class="mega-text"><h4>Dharamshala</h4><p>Peaceful Retreat</p></div>
+            </a>
+            <a href="amritsar-to-mussoorie.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-tree"></i></div>
+              <div class="mega-text"><h4>Mussoorie</h4><p>Nature Trails</p></div>
+            </a>
+            <a href="amritsar-to-auli.html" class="mega-item">
+              <div class="mega-icon"><i class="fas fa-skiing"></i></div>
+              <div class="mega-text"><h4>Auli</h4><p>Skiing Resort</p></div>
+            </a>
+          </div>
+        </li>
+
+        <li class="ultra-link-item"><a href="contact.html" class="ultra-link">Contact</a></li>
+      </ul>
+
+      <div class="ultra-actions">
+        <a href="tel:9878120686" class="ultra-call-icon" title="Call Now">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a href="contact.html" class="ultra-cta">Get A Quote</a>
+      </div>
+
+      <button class="ultra-mobile-toggle" onclick="document.getElementById('ultra-mobile-menu').classList.add('active')">
+        <i class="bi bi-list"></i>
+      </button>
+    </nav>
+  </div>
+
+  <div id="ultra-mobile-menu" class="ultra-mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('ultra-mobile-menu').classList.remove('active')">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="taxi-services.html">Tours</a>
+    <a href="contact.html" class="ultra-cta" style="margin-top:20px; font-size:1.2rem; padding:16px 40px;">Contact Us</a>
+  </div>
+<!-- Ultra Modern Floating Navbar End -->
