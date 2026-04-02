@@ -42,7 +42,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -81,27 +81,28 @@
         </style>
 <style>
     :root {
-      --primary: #0f172a;
-      --secondary: #3b82f6;
-      --accent: #f59e0b;
+      --primary: #FF5E00; /* Sunrise Orange */
+      --secondary: #1E6533; /* Forest Green */
+      --accent: #E85D04; 
       --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.7);
-      --bg-light: #f8fafc;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
+      --surface-glass: rgba(255, 255, 255, 0.9);
+      --bg-light: #FFFDF7; /* Cream white background */
+      --text-main: #2C3E50; /* Dark slate for readability */
+      --text-muted: #596A7A;
       --radius-lg: 24px;
       --radius-xl: 32px;
-      --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.05);
-      --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.07);
+      --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.08);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
     }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--text-main);
       background-color: var(--bg-light);
       -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Playfair Display', serif;
+      color: var(--text-main);
     }
     
     /* Elegant Nav */
@@ -109,7 +110,7 @@
       background: var(--surface-glass);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -117,7 +118,7 @@
     }
     .new-nav .nav-link {
       font-weight: 500;
-      color: var(--primary) !important;
+      color: var(--text-main) !important;
       padding: 1rem 1.5rem !important;
       position: relative;
     }
@@ -126,7 +127,7 @@
       position: absolute;
       bottom: 8px; left: 1.5rem; right: 1.5rem;
       height: 2px;
-      background: var(--secondary);
+      background: var(--primary);
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -139,7 +140,7 @@
       position: relative;
       height: 90vh;
       min-height: 700px;
-      background: url('img/wide%20golden%20temple%20view.jpg') center/cover no-repeat;
+      background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);
       display: flex;
       align-items: center;
       padding-top: 80px;
@@ -150,39 +151,39 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 100%);
+      /* Remove the old dark overlay */
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      color: white;
+      color: var(--text-main);
     }
     .hero-title {
       font-size: 5rem;
       line-height: 1.1;
       font-weight: 800;
       margin-bottom: 1.5rem;
-      background: linear-gradient(to right, #ffffff, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text-main);
+      text-shadow: none;
     }
     .hero-subtitle {
       font-size: 1.25rem;
       font-weight: 400;
-      opacity: 0.9;
+      opacity: 0.95;
       margin-bottom: 2.5rem;
       max-width: 600px;
+      color: var(--text-muted);
     }
     
     /* Glassmorphism Booking Widget */
     .booking-widget {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.8);
       border-radius: var(--radius-lg);
       padding: 2.5rem;
-      box-shadow: var(--shadow-glass);
-      color: white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      color: var(--text-main);
       transform: translateY(20px);
       animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -194,22 +195,24 @@
       width: 100%;
       padding: 1rem;
       border-radius: 12px;
-      font-weight: 600;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       transition: all 0.3s ease;
       text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
     }
-    .btn-call { background: var(--secondary); color: white; border: none; }
-    .btn-call:hover { background: #2563eb; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(59,130,246,0.3); }
+    .btn-call { background: var(--primary); color: white; border: none; }
+    .btn-call:hover { background: #E85D04; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3); }
     .btn-wa { background: #25d366; color: white; border: none; }
     .btn-wa:hover { background: #1ebd57; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
 
     /* Bento Grid Services */
     .bento-section {
       padding: 6rem 0;
+      background-color: var(--bg-light);
     }
     .bento-grid {
       display: grid;
@@ -229,14 +232,14 @@
       flex-direction: column;
       justify-content: space-between;
       text-decoration: none;
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 94, 0, 0.05);
     }
     .bento-item:hover {
       transform: translateY(-8px);
-      box-shadow: 0 30px 60px -12px rgba(0,0,0,0.12);
-      border-color: rgba(59, 130, 246, 0.1);
+      box-shadow: 0 30px 60px -12px rgba(255, 94, 0, 0.15);
+      border-color: rgba(255, 94, 0, 0.2);
     }
-    .bento-large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, white, #f8fafc); }
+    .bento-large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, white, #FFF3E0); }
     .bento-wide { grid-column: span 2; grid-row: span 1; }
     
     .bento-icon {
@@ -246,27 +249,29 @@
       font-size: 28px;
       margin-bottom: 2rem;
       transition: transform 0.3s;
+      background: rgba(255, 94, 0, 0.1);
+      color: var(--primary);
     }
-    .bento-item:hover .bento-icon { transform: scale(1.1); }
+    .bento-item:hover .bento-icon { transform: scale(1.1); background: var(--primary); color: white; }
     
-    .bento-item h3 { font-size: 1.6rem; font-family: 'Inter', sans-serif; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; }
-    .bento-item p { color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.6; }
-    .bento-link { font-weight: 600; display: inline-flex; align-items: center; transition: gap 0.3s; }
-    .bento-item:hover .bento-link { gap: 10px; }
+    .bento-item h3 { font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; }
+    .bento-item p { color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.6; font-family: 'DM Sans', sans-serif; }
+    .bento-link { font-weight: 700; color: var(--secondary); display: inline-flex; align-items: center; transition: gap 0.3s; font-family: 'DM Sans', sans-serif; }
+    .bento-item:hover .bento-link { gap: 10px; color: var(--primary); }
     .bento-item .bento-link i { transition: transform 0.3s; }
     .bento-item:hover .bento-link i { transform: translateX(5px); }
 
     /* Fleet Cards */
-    .fleet-section { background: var(--bg-light); padding: 5rem 0; border-radius: 40px; margin: 2rem 0; }
+    .fleet-section { background: white; padding: 5rem 0; border-radius: 40px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); }
     .fleet-card {
-      background: white;
+      background: var(--bg-light);
       border-radius: var(--radius-lg);
       padding: 1.25rem;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0,0,0,0.03);
+      border: 1px solid rgba(255, 94, 0, 0.1);
       transition: all 0.3s;
     }
-    .fleet-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .fleet-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 94, 0, 0.15); border-color: rgba(255, 94, 0, 0.3); }
     .fleet-img-wrap {
       height: 200px;
       border-radius: 16px;
@@ -291,6 +296,24 @@
       .new-hero { padding-top: 100px; height: auto; padding-bottom: 60px; min-height: auto; }
     }
   </style>
+
+<style>
+/* Global Mobile Responsiveness Fixes */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem !important; }
+    .display-4 { font-size: 2.5rem !important; }
+    .display-5 { font-size: 2rem !important; }
+    .display-6 { font-size: 1.75rem !important; }
+    .fs-5 { font-size: 1rem !important; }
+    .whatsapp-btn { width: 100%; text-align: center; }
+    .row.g-4 { gap: 1rem !important; }
+    section { padding: 3rem 0 !important; }
+    .p-40-mobile { padding: 25px !important; }
+}
+@media (min-width: 769px) {
+    .p-40-mobile { padding: 40px;" class="p-40-mobile }
+}
+</style>
 </head>
 <body>
 <!-- Ultra Modern Floating Navbar Start -->
@@ -348,11 +371,11 @@
         align-items: center;
     }
     .ultra-link {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        color: #334155;
+        font-family: 'DM Sans', sans-serif;
+        color: #596A7A;
         text-decoration: none;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         padding: 12px 0;
         display: inline-flex;
@@ -361,7 +384,7 @@
         white-space: nowrap;
     }
     .ultra-link:hover, .ultra-link.active {
-        color: #0f172a;
+        color: #FF5E00;
     }
     .ultra-link i.chevron {
         font-size: 0.7rem;
@@ -379,28 +402,28 @@
     }
     
     .ultra-cta {
-        background: #0f172a;
-        color: #ffffff !important;
+        background: #FF5E00;
+        color: var(--text-main) !important;
         padding: 10px 22px;
         border-radius: 100px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+        box-shadow: 0 4px 14px rgba(255, 94, 0, 0.2);
         white-space: nowrap;
     }
     .ultra-cta:hover {
-        background: #2563eb;
+        background: #E85D04;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 8px 24px rgba(255, 94, 0, 0.3);
     }
     
     .ultra-call-icon {
         width: 40px;
         height: 40px;
-        background: #22c55e;
+        background: #1E6533;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -409,10 +432,10 @@
         font-size: 1.1rem;
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+        box-shadow: 0 4px 14px rgba(30, 101, 51, 0.3);
     }
     .ultra-call-icon:hover {
-        background: #16a34a;
+        background: #154724;
         transform: scale(1.08);
     }
     
@@ -450,21 +473,21 @@
         align-items: center;
         gap: 12px;
         text-decoration: none;
-        color: #334155;
+        color: #2C3E50;
         padding: 10px 14px;
         border-radius: 10px;
         transition: all 0.2s;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-size: 0.9rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.95rem;
         font-weight: 500;
     }
     .dropdown-item-modern:hover {
-        background: #f1f5f9;
-        color: #0f172a;
+        background: rgba(255, 94, 0, 0.05);
+        color: #FF5E00;
         transform: translateX(4px);
     }
     .dropdown-item-modern i {
-        color: #2563eb;
+        color: #1E6533;
         width: 20px;
         text-align: center;
         font-size: 1rem;
@@ -485,7 +508,7 @@
         background: none;
         border: none;
         font-size: 1.8rem;
-        color: #0f172a;
+        color: var(--bg-light);
         cursor: pointer;
         padding: 4px;
     }
@@ -528,13 +551,13 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         font-size: 1.3rem;
         font-weight: 700;
-        color: #0f172a;
+        color: var(--bg-light);
         text-decoration: none;
         transition: color 0.2s;
         text-align: center;
     }
     .ultra-mobile-menu a:hover {
-        color: #2563eb;
+        color: var(--primary);
     }
     .mobile-close {
         position: absolute;
@@ -546,7 +569,7 @@
         height: 44px;
         border-radius: 50%;
         font-size: 1.2rem;
-        color: #0f172a;
+        color: var(--bg-light);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -564,7 +587,7 @@
       <!-- Changed Logo Here -->
       <a href="index.html" class="ultra-brand" style="margin-right: 20px; white-space: nowrap;">
         <img src="img/brand-logo.png" alt="Budget Trips Logo">
-        <span class="d-none d-lg-inline" style="font-weight: 800; font-size: 1.25rem; color: #003A66; margin-left: 10px; letter-spacing: 0.5px; white-space: nowrap;">BudgetTrips.in</span>
+        <span class="d-none d-lg-inline" style="font-weight: 800; font-size: 1.25rem; color: var(--text-main); margin-left: 10px; letter-spacing: 0.5px; white-space: nowrap;">BudgetTrips.in</span>
       </a>
       
       <ul class="ultra-links">
@@ -662,12 +685,12 @@
     </button>
     <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
         <img src="img/brand-logo.png" alt="Logo" style="height: 50px; object-fit: contain;">
-        <span style="font-weight: 800; font-size: 1.4rem; color: #003A66; margin-left: 10px;">BudgetTrips.in</span>
+        <span style="font-weight: 800; font-size: 1.4rem; color: var(--text-main); margin-left: 10px;">BudgetTrips.in</span>
     </div>
     <a href="index.html"><i class="fas fa-home me-2 text-primary"></i>Home</a>
     <a href="about.html"><i class="fas fa-info-circle me-2 text-info"></i>About</a>
     <a href="service.html"><i class="fas fa-concierge-bell me-2 text-success"></i>Services</a>
-    <a href="amritsar-to-manali.html"><i class="fas fa-mountain me-2 text-warning"></i>Tours</a>
+    <a href="amritsar-to-manali.html"><i class="fas fa-mountain me-2 text-primary"></i>Tours</a>
     <a href="swift.html"><i class="fas fa-car me-2" style="color:#6f42c1;"></i>Vehicles</a>
     <a href="golden-triangle-india.html"><i class="fas fa-map-marked-alt me-2 text-danger"></i>Packages</a>
     <a href="amritsar-travel-guide.html"><i class="fas fa-blog me-2" style="color:#fd7e14;"></i>Blogs</a>
@@ -678,8 +701,8 @@
 <!-- Premium Announcement Marquee Start -->
 <style>
 .premium-marquee-wrapper {
-    background: #0a0a0a;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--bg-light);
+    border: 1px solid rgba(255, 94, 0, 0.15);
     overflow: hidden;
     padding: 8px 0;
     position: fixed;
@@ -698,11 +721,11 @@
 }
 .premium-marquee-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #000, transparent);
+    background: linear-gradient(to right, var(--bg-light), transparent);
 }
 .premium-marquee-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #000, transparent);
+    background: linear-gradient(to left, var(--bg-light), transparent);
 }
 .premium-marquee-content {
     display: flex;
@@ -710,7 +733,7 @@
     animation: scrollMarquee 35s linear infinite;
 }
 .premium-marquee-content span {
-    color: #d4af37;
+    color: var(--primary);
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -752,25 +775,25 @@
           <div class="hero-content">
             
             <div style="margin-bottom: 15px;">
-              <i class="fa fa-quote-left" style="color: #d4af37; font-size: 0.8rem; margin-right: 5px;"></i>
-              <span style="font-family: 'Georgia', serif; font-style: italic; color: #a0a0a0; font-size: 0.95rem; letter-spacing: 0.5px;">"The world is a book, and those who do not travel read only one page."</span>
+              <i class="fa fa-quote-left" style="color: var(--primary); font-size: 0.8rem; margin-right: 5px;"></i>
+              <span style="font-family: 'Georgia', serif; font-style: italic; color: var(--text-muted); font-size: 0.95rem; letter-spacing: 0.5px;">"The world is a book, and those who do not travel read only one page."</span>
             </div>
-            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill mb-4 fw-bold shadow">
+            <span class="badge px-4 py-2 rounded-pill mb-4 fw-bold shadow" style="background: var(--secondary); color: white;">
               <i class="fas fa-star text-dark me-2"></i>Amritsar's Premium Transport
             </span>
-            <h1 class="hero-title">Discover Punjab<br>With Elegance.</h1>
-            <p class="hero-subtitle">Experience first-class car rentals, guided heritage tours, and seamless outstation travel. Impeccable vehicles, verified drivers, and transparent pricing.</p>
+            <h1 class="hero-title" style="text-align: left;">Punjab to Himachal<br><span style="color: var(--primary);">Premium Cabs</span></h1>
+            <p class="hero-subtitle">Your trusted travel partner for Outstation Taxis from Amritsar to Dalhousie, Dharamshala, Manali, Shimla, and beyond. Book an Innova, Swift, or Maharaja Tempo today.</p>
             <div class="d-flex flex-wrap gap-4 mt-4">
-              <div class="d-flex align-items-center gap-2">
-                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-white small"></i></div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-dark small"></i></div>
                 <span class="fw-medium">24/7 Support</span>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-white small"></i></div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-dark small"></i></div>
                 <span class="fw-medium">No Hidden Fees</span>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-white small"></i></div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="bg-success rounded-circle p-1"><i class="fas fa-check text-dark small"></i></div>
                 <span class="fw-medium">Top-Rated Fleet</span>
               </div>
             </div>
@@ -779,8 +802,8 @@
         
         <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.2s">
           <div class="booking-widget">
-            <h3 class="mb-2 text-white">Instant Booking</h3>
-            <p class="mb-4 text-white-50">Skip the hassle. Secure your ride instantly.</p>
+            <h3 class="mb-2">Instant Booking</h3>
+            <p class="mb-4 text-muted">Skip the hassle. Secure your ride instantly.</p>
             
             <a href="tel:9878120686" class="widget-btn btn-call mb-3">
               <i class="fas fa-phone-alt fa-lg"></i>
@@ -792,8 +815,8 @@
               <span class="fs-5">WhatsApp Us</span>
             </a>
             
-            <p class="text-center mt-4 mb-0 text-white-50 small">
-              <i class="fas fa-bolt text-warning me-1"></i> Responses typically under 2 mins
+            <p class="text-center mt-4 mb-0 text-muted small">
+              <i class="fas fa-bolt text-primary me-1"></i> Responses typically under 2 mins
             </p>
           </div>
         </div>
@@ -801,138 +824,177 @@
     </div>
   </section>
 
-  <!-- World-Class Bento Services -->
-  <section class="bento-section bg-light" style="padding: 6rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+  <!-- Safety & Security Trust Strip -->
+  <div class="container-fluid py-4" style="background: rgba(30, 101, 51, 0.05); border-top: 1px solid rgba(30, 101, 51, 0.1); border-bottom: 1px solid rgba(30, 101, 51, 0.1);">
     <div class="container">
-      <div class="text-center mb-5 pb-3 wow fadeInUp" data-wow-delay="0.1s">
-        <span class="badge px-4 py-2 rounded-pill mb-3 fw-bold shadow-lg" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: #fff; letter-spacing: 2px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.2);">PREMIUM MOBILITY</span>
-        <h2 class="display-4 fw-bold text-dark mb-3" style="letter-spacing: -1px;">Exceptional Services</h2>
-        <p class="text-muted fs-5 fw-medium mx-auto" style="max-width: 650px;">Tailored, world-class travel solutions with uncompromising quality for every journey type.</p>
-      </div>
-      
-      <div class="bento-grid wow fadeInUp" data-wow-delay="0.2s">
-        <!-- Outstation (Large) -->
-        <a href="outstation-tours.html" class="bento-item bento-large group" style="background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%); border: 1px solid rgba(13, 110, 253, 0.15); box-shadow: 0 10px 40px rgba(13, 110, 253, 0.08); position: relative; z-index: 1;">
-          <!-- Decorative Background Element -->
-          <div style="position: absolute; right: -5%; bottom: -5%; opacity: 0.04; transform: rotate(-15deg); z-index: -1;">
-            <i class="fas fa-route" style="font-size: 20rem;"></i>
-          </div>
-          <div class="d-flex flex-column h-100 justify-content-between">
-            <div>
-              <div class="bento-icon shadow-sm mb-4" style="width: 75px; height: 75px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; background: linear-gradient(135deg, #0d6efd, #0a58ca); color: white;">
-                <i class="fas fa-route"></i>
-              </div>
-              <h3 class="display-6 fw-bold mb-3 text-dark" style="font-size: 2.4rem; letter-spacing: -0.5px;">Outstation Journeys</h3>
-              <p class="fs-5 text-muted mb-4" style="line-height: 1.7;">Travel to Dalhousie, Manali, Shimla, Katra, or Delhi in sheer comfort. Our hill-station experts ensure a safe, scenic, and buttery-smooth ride.</p>
-              
-              <div class="row g-4 mt-2 text-dark fw-semibold">
-                <div class="col-6 d-flex align-items-center"><div class="bg-white rounded-circle shadow-sm p-2 me-3 text-center" style="width: 40px; height: 40px; line-height:24px;"><i class="fas fa-map-marked-alt text-primary"></i></div>One-way Drops</div>
-                <div class="col-6 d-flex align-items-center"><div class="bg-white rounded-circle shadow-sm p-2 me-3 text-center" style="width: 40px; height: 40px; line-height:24px;"><i class="fas fa-sync-alt text-primary"></i></div>Round Trips</div>
-                <div class="col-6 d-flex align-items-center"><div class="bg-white rounded-circle shadow-sm p-2 me-3 text-center" style="width: 40px; height: 40px; line-height:24px;"><i class="fas fa-calendar-alt text-primary"></i></div>Multi-day Tours</div>
-                <div class="col-6 d-flex align-items-center"><div class="bg-white rounded-circle shadow-sm p-2 me-3 text-center" style="width: 40px; height: 40px; line-height:24px;"><i class="fas fa-mountain text-primary"></i></div>Hill Experts</div>
-              </div>
-            </div>
-            <div class="mt-5">
-               <span class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm d-inline-flex align-items-center bento-premium-btn" style="transition: all 0.3s ease;">
-                 Explore Outstation Routes <i class="fas fa-arrow-right ms-2 bento-arrow"></i>
-               </span>
-            </div>
-          </div>
-        </a>
-        
-        <!-- Local (Wide) -->
-        <a href="taxi-services.html" class="bento-item bento-wide" style="border: 1px solid rgba(0,0,0,0.08); background: #ffffff; position: relative; overflow: hidden;">
-          <div class="d-flex flex-column flex-sm-row gap-4 align-items-sm-center h-100 position-relative z-1">
-            <div class="bento-icon bg-dark text-white rounded-circle shadow-lg flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 90px; height: 90px; font-size: 2.2rem;">
-              <i class="fas fa-city"></i>
-            </div>
-            <div>
-              <h3 class="fw-bold mb-2 text-dark fs-2">City Exploration</h3>
-              <p class="text-muted fs-5 mb-3" style="line-height: 1.6;">8Hr/80Km flat packages. Visit the Golden Temple, Jallianwala Bagh, and bustling local markets effortlessly.</p>
-              <div class="text-dark fw-bold fs-6 d-inline-flex align-items-center hover-underline-anim pb-1" style="border-bottom: 2px solid #212529;">View Local Cabs <i class="fas fa-arrow-right ms-2"></i></div>
-            </div>
-          </div>
-        </a>
-        
-        <!-- Airport -->
-        <a href="taxi-services.html" class="bento-item" style="border: 1px solid rgba(255, 193, 7, 0.3); background: linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);">
-          <div class="d-flex flex-column h-100 justify-content-between">
-            <div>
-              <div class="bento-icon text-warning mb-4 bg-warning bg-opacity-10 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 70px; height: 70px; font-size: 2rem;">
-                <i class="fas fa-plane-arrival"></i>
-              </div>
-              <h3 class="fw-bold text-dark mb-2 fs-3">Airport Transfer</h3>
-              <p class="text-muted mb-0 fs-6">Premium, punctual pick-ups and drops at SGRDJI Airport Amritsar.</p>
-            </div>
-            <div class="mt-4">
-            <div style="margin-bottom: 15px;">
-              <i class="fa fa-quote-left" style="color: #d4af37; font-size: 0.8rem; margin-right: 5px;"></i>
-              <span style="font-family: 'Georgia', serif; font-style: italic; color: #a0a0a0; font-size: 0.95rem; letter-spacing: 0.5px;">"Travel is the only thing you buy that makes you richer."</span>
-            </div>
-            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill fw-bold fs-6 shadow-sm">Book Transfer <i class="fas fa-arrow-right ms-1"></i></span></div>
-          </div>
-        </a>
-        
-        <!-- Heritage -->
-        <a href="amritsar-heritage-tour.html" class="bento-item" style="border: 1px solid rgba(25, 135, 84, 0.25); background: linear-gradient(180deg, #ffffff 0%, #f4fdf8 100%);">
-          <div class="d-flex flex-column h-100 justify-content-between">
-            <div>
-              <div class="bento-icon text-success mb-4 bg-success bg-opacity-10 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 70px; height: 70px; font-size: 2rem;">
-                <i class="fas fa-vihara"></i>
-              </div>
-              <h3 class="fw-bold text-dark mb-2 fs-3">Heritage Tours</h3>
-              <p class="text-muted mb-0 fs-6">Immersive, guided spiritual and historical sightseeing curated by locals.</p>
-            </div>
-            <div class="mt-4"><span class="badge bg-success text-white px-4 py-2 rounded-pill fw-bold fs-6 shadow-sm">View Tours <i class="fas fa-arrow-right ms-1"></i></span></div>
-          </div>
-        </a>
+      <div class="row g-4 text-center">
+        <div class="col-md-3 col-6 wow fadeIn" data-wow-delay="0.1s">
+            <i class="fas fa-shield-alt mb-2" style="font-size: 2rem; color: var(--secondary);"></i>
+            <h5 style="color: var(--text-main); font-size: 1rem; font-weight: 700;">Verified Drivers</h5>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin:0; font-family: 'DM Sans', sans-serif;">Background-checked locals</p>
+        </div>
+        <div class="col-md-3 col-6 wow fadeIn" data-wow-delay="0.2s">
+            <i class="fas fa-map-marker-alt mb-2" style="font-size: 2rem; color: var(--primary);"></i>
+            <h5 style="color: var(--text-main); font-size: 1rem; font-weight: 700;">GPS Tracking</h5>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin:0; font-family: 'DM Sans', sans-serif;">Fitted in all premium cabs</p>
+        </div>
+        <div class="col-md-3 col-6 wow fadeIn" data-wow-delay="0.3s">
+            <i class="fas fa-user-shield mb-2" style="font-size: 2rem; color: var(--secondary);"></i>
+            <h5 style="color: var(--text-main); font-size: 1rem; font-weight: 700;">Family Safe</h5>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin:0; font-family: 'DM Sans', sans-serif;">Strictly professional & polite</p>
+        </div>
+        <div class="col-md-3 col-6 wow fadeIn" data-wow-delay="0.4s">
+            <i class="fas fa-headset mb-2" style="font-size: 2rem; color: var(--primary);"></i>
+            <h5 style="color: var(--text-main); font-size: 1rem; font-weight: 700;">24/7 Support</h5>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin:0; font-family: 'DM Sans', sans-serif;">Direct WhatsApp assistance</p>
+        </div>
       </div>
     </div>
-    
-    <style>
-      .bento-premium-btn { transform: translateY(0); }
-      .bento-large:hover .bento-premium-btn {
-        background-color: #0a58ca;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4) !important;
-      }
-      .bento-arrow { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-      .bento-large:hover .bento-arrow { transform: translateX(6px); }
-      
-      .hover-underline-anim { transition: gap 0.3s; gap: 0; }
-      .bento-wide:hover .hover-underline-anim { gap: 8px; border-color: #0d6efd !important; color: #0d6efd !important; }
-      .bento-wide:hover .hover-underline-anim i { color: #0d6efd; }
-    </style>
+  </div>
+
+  <!-- Top Route Focus -->
+  <section class="bento-section" style="padding: 6rem 0; background: #FFFDF7; border-top: 1px solid rgba(255, 94, 0, 0.1);">
+    <div class="container">
+      <div class="text-center mb-5 pb-3 wow fadeInUp" data-wow-delay="0.1s">
+        <span class="badge px-4 py-2 rounded-pill mb-3 fw-bold shadow-lg" style="background: rgba(255, 94, 0, 0.1); color: var(--primary); border: 1px solid rgba(255, 94, 0, 0.3); letter-spacing: 2px;">HIMALAYAN EXPERTS</span>
+        <h2 class="display-4 fw-bold mb-3" style="color: var(--text-main); letter-spacing: -1px;">Amritsar to <span style="color: var(--primary);">Hill Stations</span></h2>
+        <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 750px;">Most of our clients travel from the heart of Punjab straight to the serene Himalayas. We provide exclusive, well-maintained cabs for your scenic outstation journeys. Call or WhatsApp us to get instant pricing.</p>     
+      </div>
+
+      <div class="row g-4 justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+        <div class="col-lg-4 col-md-6">
+            <div style="background: white; border: 1px solid rgba(255, 94, 0, 0.15); border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" class="p-40-mobile height: 100%; position: relative; overflow: hidden; transition: transform 0.3s; transform-origin: center;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';">
+                <i class="fas fa-mountain mb-4" style="font-size: 2.5rem; color: var(--primary);"></i>
+                <h3 style="color: var(--text-main); font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">Manali & Rohtang</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">A magnificent 400km drive through the valleys. Best experienced in our premium Innova Crysta.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3">
+                    <a href="amritsar-to-manali.html" style="color: var(--primary); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">View Route <i class="fas fa-arrow-right ms-1"></i></a>
+                    <a href="https://wa.me/919878120686?text=I'm%20interested%20in%20a%20cab%20from%20Amritsar%20to%20Manali." target="_blank" style="background: var(--secondary); color: var(--text-main); padding: 10px 15px; border-radius: 50px; text-decoration: none; font-weight:bold; font-size:14px;"><i class="fab fa-whatsapp me-1"></i> Book</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div style="background: #fff, rgba(10,10,10,0.8)); border: 1px solid rgba(255, 94, 0, 0.15); border-radius: 20px; padding: 40px;" class="p-40-mobile height: 100%; position: relative; overflow: hidden; transition: transform 0.3s; transform-origin: center;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';">
+                <i class="fas fa-vihara mb-4" style="font-size: 2.5rem; color: var(--primary);"></i>
+                <h3 style="color: var(--text-main); font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">Dharamshala</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">The spiritual and scenic escape. Smooth rides to the home of the Dalai Lama with expert hill-station chauffeurs.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3">
+                    <a href="amritsar-to-dharamshala.html" style="color: var(--primary); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">View Route <i class="fas fa-arrow-right ms-1"></i></a>
+                    <a href="https://wa.me/919878120686?text=I'm%20interested%20in%20a%20cab%20from%20Amritsar%20to%20Dharamshala." target="_blank" style="background: #25D366; color: var(--text-main); padding: 10px 15px; border-radius: 50px; text-decoration: none; font-weight:bold; font-size:14px;"><i class="fab fa-whatsapp me-1"></i> Book</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div style="background: #fff, rgba(10,10,10,0.8)); border: 1px solid rgba(255, 94, 0, 0.15); border-radius: 20px; padding: 40px;" class="p-40-mobile height: 100%; position: relative; overflow: hidden; transition: transform 0.3s; transform-origin: center;" onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';">
+                <i class="fas fa-gopuram mb-4" style="font-size: 2.5rem; color: var(--primary);"></i>
+                <h3 style="color: var(--text-main); font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">Amritsar & Border</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Before heading to the hills, explore the Golden Temple, Jallianwala Bagh, and the thrilling Wagah Border retreat.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3">
+                    <a href="amritsar-heritage-tour.html" style="color: var(--primary); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">View Route <i class="fas fa-arrow-right ms-1"></i></a>
+                    <a href="https://wa.me/919878120686?text=I'm%20interested%20in%20Amritsar%20Local." target="_blank" style="background: #25D366; color: var(--text-main); padding: 10px 15px; border-radius: 50px; text-decoration: none; font-weight:bold; font-size:14px;"><i class="fab fa-whatsapp me-1"></i> Book</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Modern Fleet Integration -->
+  
+  <!-- Mountain & Family Safety Feature -->
+  <section class="py-5" style="background: var(--bg-light); border: 1px solid rgba(255, 94, 0, 0.15);">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+            <h6 class="text-uppercase mb-3" style="color: #25D366; font-weight: 700; letter-spacing: 2px;"><i class="fas fa-shield-alt me-2"></i> Your Safety is Our Priority</h6>
+            <h2 class="display-6 fw-bold mb-4" style="color: var(--text-main);">Why Families & Solo Travelers Trust Us</h2>
+            <p class="mb-4" style="color: var(--text-muted); font-size: 1.1rem;">Traveling across state lines to the Himalayas requires more than just a car. It requires absolute reliability. We have designed our service around total peace of mind.</p>
+            
+            <div class="d-flex align-items-start mb-4">
+                <div class="flex-shrink-0" style="width: 50px; height: 50px; background: rgba(212,175,55,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 94, 0, 0.15);">
+                    <i class="fas fa-route" style="font-size: 1.5rem; color: var(--primary);"></i>
+                </div>
+                <div class="ms-4">
+                    <h5 style="color: var(--text-main); font-weight: 600;">Mountain-Trained Chauffeurs</h5>
+                    <p style="color: var(--text-muted); margin: 0;">Driving in Himachal Pradesh is challenging. Our drivers have 5+ years of exclusive hill-station driving experience.</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-start mb-4">
+                <div class="flex-shrink-0" style="width: 50px; height: 50px; background: rgba(37,211,102,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(37,211,102,0.3);">
+                    <i class="fas fa-female" style="font-size: 1.5rem; color: #25D366;"></i>
+                </div>
+                <div class="ms-4">
+                    <h5 style="color: var(--text-main); font-weight: 600;">Female & Family Safe</h5>
+                    <p style="color: var(--text-muted); margin: 0;">Strict code of conduct. Live GPS sharing enabled. Our drivers are trained to be respectful, polite, and completely professional.</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-start mb-4">
+                <div class="flex-shrink-0" style="width: 50px; height: 50px; background: rgba(212,175,55,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 94, 0, 0.15);">
+                    <i class="fas fa-car-crash" style="font-size: 1.5rem; color: var(--primary);"></i>
+                </div>
+                <div class="ms-4">
+                    <h5 style="color: var(--text-main); font-weight: 600;">Zero-Breakdown Policy</h5>
+                    <p style="color: var(--text-muted); margin: 0;">All vehicles are heavily serviced before outstation trips. In the rare event of an issue, we dispatch a replacement cab immediately.</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/919878120686?text=I%20have%20a%20query%20regarding%20outstation%20safety%20and%20booking." target="_blank" class="btn px-4 py-3 mt-2 fw-bold" style="background: transparent; border: 2px solid #25D366; color: #25D366; border-radius: 50px;">
+                <i class="fab fa-whatsapp me-2"></i>Chat with our Safety Team
+            </a>
+        </div>
+        
+        <!-- Social Proof / Testimonial Stack -->
+        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+            <div style="background: white; border: 1px solid rgba(255, 94, 0, 0.15); border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" class="p-40-mobile position: relative;">
+                <i class="fas fa-quote-left mb-4" style="font-size: 3rem; color: rgba(255, 94, 0, 0.1); position: absolute; top: 30px; right: 40px;"></i>
+                <h4 style="color: var(--text-main); margin-bottom: 30px;">What our passengers say</h4>
+                
+                <div style="border-left: 3px solid #25D366; padding-left: 20px; margin-bottom: 30px;">
+                    <p style="color: var(--text-muted); font-style: italic; font-size: 1.1rem; line-height: 1.6;">"Traveled from Amritsar to Dalhousie with my wife and two young daughters. The driver was incredibly polite, never sped on the dangerous curves, and made us feel 100% secure the entire 4 days."</p>
+                    <h6 style="color: var(--text-main); margin: 0; font-weight: bold;">Rahul Sharma</h6>
+                    <small style="color: var(--primary);">Family Trip to Himachal</small>
+                </div>
+
+                <div style="border-left: 3px solid var(--primary); padding-left: 20px;">
+                    <p style="color: var(--text-muted); font-style: italic; font-size: 1.1rem; line-height: 1.6;">"As a solo female traveler visiting the Golden Temple and Wagah Border, I was nervous. My cab driver acted like a local guardian. Extremely respectful and safe!"</p>
+                    <h6 style="color: var(--text-main); margin: 0; font-weight: bold;">Priya Desai</h6>
+                    <small style="color: var(--primary);">Solo Traveler, Mumbai</small>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Modern Fleet Integration -->
 <style>
 /* Elite Fleet CSS */
 .fleet-elite-section {
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    background: var(--bg-light);
     padding: 7rem 0;
     position: relative;
     overflow: hidden;
 }
 .fleet-elite-card {
-    background: #ffffff;
+    background: var(--bg-light);
     border-radius: 24px;
     padding: 1.5rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255, 94, 0, 0.15);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     z-index: 1;
 }
 .fleet-elite-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(13, 110, 253, 0.12);
-    border-color: rgba(13, 110, 253, 0.1);
+    box-shadow: 0 20px 50px rgba(255, 94, 0, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
 }
 .fleet-elite-img {
     height: 220px;
     border-radius: 16px;
-    background: radial-gradient(circle at center, #f1f5f9 0%, #e2e8f0 100%);
+    background: var(--bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -961,7 +1023,7 @@
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--bg-light);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     z-index: 2;
 }
@@ -972,13 +1034,13 @@
 }
 .spec-item {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 5px;
 }
 .spec-item i {
-    color: #3b82f6;
+    color: var(--primary);
 }
 .fleet-price-box {
     background: #f8fafc;
@@ -993,16 +1055,16 @@
 .fleet-price {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #0f172a;
+    color: var(--bg-light);
 }
 .fleet-price span {
     font-size: 0.8rem;
-    color: #64748b;
+    color: var(--text-muted);
     font-weight: 500;
 }
 .fleet-book-btn {
-    background: #0f172a;
-    color: #ffffff !important;
+    background: var(--bg-light);
+    color: var(--text-main) !important;
     border: none;
     border-radius: 12px;
     padding: 8px 20px;
@@ -1011,9 +1073,9 @@
     transition: all 0.3s;
 }
 .fleet-book-btn:hover {
-    background: #2563eb;
+    background: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 94, 0, 0.3);
 }
 </style>
 
@@ -1122,17 +1184,16 @@
 <style>
 /* Presidential Luxury Tours CSS */
 .presidential-tours {
-    background: #0b0f19;
+    background: var(--bg-light);
     padding: 6rem 0;
     position: relative;
 }
 .gold-text {
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
+    font-weight: 800;
 }
 .luxury-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 94, 0, 0.02);
     border: 1px solid rgba(191, 149, 63, 0.3);
     border-radius: 16px;
     padding: 1.25rem;
@@ -1141,7 +1202,7 @@
 .luxury-card:hover {
     transform: translateY(-8px);
     border-color: rgba(191, 149, 63, 1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(191, 149, 63, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 20px rgba(255, 94, 0, 0.2);
 }
 .luxury-img-wrap {
     height: 220px;
@@ -1153,62 +1214,63 @@
 .luxury-img-wrap img {
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.8s;
+    mix-blend-mode: multiply;
 }
 .luxury-card:hover .luxury-img-wrap img {
     transform: scale(1.08);
 }
 .presidential-badge {
     position: absolute; top: 12px; left: 12px;
-    background: #000; color: #e5c158;
-    border: 1px solid #bf953f;
+    background: var(--bg-light); color: var(--primary);
+    border: 1px solid rgba(255, 94, 0, 0.15);
     padding: 4px 12px; border-radius: 20px;
     font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;
 }
 .luxury-btn {
-    background: linear-gradient(to right, #bf953f, #b38728);
-    color: #fff !important; font-weight: bold;
+    background: linear-gradient(to right, var(--primary), #E85D04);
+    color: var(--text-main) !important; font-weight: bold;
     border: none; border-radius: 25px; padding: 8px 20px;
     transition: all 0.3s; text-decoration: none; display: inline-block;
 }
 .luxury-btn:hover {
-    background: linear-gradient(to right, #e5c158, #fcf6ba);
-    color: #000 !important; box-shadow: 0 0 15px rgba(191, 149, 63, 0.5);
+    background: linear-gradient(to right, #FFa366, #FFE0CC);
+    color: var(--bg-light) !important; box-shadow: 0 0 15px rgba(255, 94, 0, 0.3);
 }
 .tour-feature {
-    color: #ccc; font-size: 0.85rem; margin-bottom: 0.4rem;
+    color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem;
 }
-.tour-feature i { color: #bf953f; width: 20px; }
+.tour-feature i { color: var(--primary); width: 20px; }
 </style>
 
 <div class="presidential-tours">
   <div class="container">
     <div class="text-center mb-5">
-        <span class="badge px-4 py-2 rounded-pill mb-3 shadow" style="background: rgba(191, 149, 63, 0.1); color: #e5c158; border: 1px solid #bf953f; letter-spacing: 2px;">★ WORLD-CLASS & SPECTACULAR ★</span>
-        <h2 class="display-4 fw-bold text-white mb-3">Explore North India. <span class="gold-text">The Absolute Best.</span></h2>
-        <p class="fs-5 text-light mx-auto mb-4" style="max-width: 700px; opacity: 0.8;">Tremendous heritage, spectacular scenic beauty, and cultural wonders. Nobody does it better than us. Believe me.</p>
-        <div class="d-inline-block px-4 py-2 rounded-pill mt-3" style="background: #000; border: 1px solid #bf953f; box-shadow: 0 8px 20px rgba(191, 149, 63, 0.15);">
+        <span class="badge px-4 py-2 rounded-pill mb-3 shadow" style="background: rgba(191, 149, 63, 0.1); color: var(--primary); border: 1px solid rgba(255, 94, 0, 0.15); letter-spacing: 2px;">★ WORLD-CLASS & SPECTACULAR ★</span>
+        <h2 class="display-4 fw-bold text-dark mb-3">Explore North India. <span class="gold-text">The Absolute Best.</span></h2>
+        <p class="fs-5 text-muted mx-auto mb-4" style="max-width: 700px; opacity: 0.8;">Tremendous heritage, spectacular scenic beauty, and cultural wonders. Nobody does it better than us. Believe me.</p>
+        <div class="d-inline-block px-4 py-2 rounded-pill mt-3" style="background: var(--bg-light); border: 1px solid rgba(255, 94, 0, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <strong class="gold-text fs-6"><i class="fas fa-shield-alt me-2"></i>TREMENDOUS TRUST - OVER 10,000+ HAPPY TRAVELERS</strong>
         </div>
     </div>
 
     <div class="row g-4">
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #FFF9C4; border-color: rgba(255, 249, 196, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/complete golden temple view.jpg" alt="Golden Temple">
                     <div class="presidential-badge">★ Most Tremendous</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Amritsar Heritage Tour</h4>
+                <h4 class="text-dark fw-bold mb-2">Amritsar Heritage Tour</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>1 Day</span>
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-star me-1 text-warning"></i>VIP Access</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>1 Day</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-star me-1 text-primary"></i>VIP Access</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> Incredible Golden Temple Darshan</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Historic Jallianwala Bagh</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Spectacular Wagah Border</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;1,499</span><span class="text-secondary ms-1 small">/ person</span></div>
                     <a href="amritsar-heritage-tour.html" class="luxury-btn">Book Now</a>
                 </div>
@@ -1216,22 +1278,22 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #E8F5E9; border-color: rgba(232, 245, 233, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/punjab village.jpg" alt="Rural Punjab">
                     <div class="presidential-badge">★ Beautiful Culture</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Rural Punjab Experience</h4>
+                <h4 class="text-dark fw-bold mb-2">Rural Punjab Experience</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>2 Days</span>
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-bed me-1 text-warning"></i>With Stay</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>2 Days</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-bed me-1 text-primary"></i>With Stay</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> Tremendous Traditional Meals</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Fantastic Tractor Rides</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Authentic Folk Dance</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;3,499</span><span class="text-secondary ms-1 small">/ person</span></div>
                     <a href="rural-punjab-experience.html" class="luxury-btn">Book Now</a>
                 </div>
@@ -1239,22 +1301,22 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #FFF9C4; border-color: rgba(255, 249, 196, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/Taj_Mahal_(Edited).jpeg.webp" alt="Golden Triangle">
                     <div class="presidential-badge">★ Ultimate Luxury</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Golden Triangle India</h4>
+                <h4 class="text-dark fw-bold mb-2">Golden Triangle India</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>6 Days</span>
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-crown me-1 text-warning"></i>Premium Route</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>6 Days</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-crown me-1 text-primary"></i>Premium Route</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> The Amazing Taj Mahal</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Beautiful Amber Fort</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Historic Red Fort</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;14,999</span><span class="text-secondary ms-1 small">/ person</span></div>
                     <a href="golden-triangle-india.html" class="luxury-btn">Book Now</a>
                 </div>
@@ -1262,21 +1324,21 @@
         </div>
         
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #F3E5F5; border-color: rgba(243, 229, 245, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/manali.png" alt="Manali">
                     <div class="presidential-badge">★ Spectacular Peaks</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Amritsar to Manali</h4>
+                <h4 class="text-dark fw-bold mb-2">Amritsar to Manali</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>5 Days</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>5 Days</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> Rohtang Pass Adventure</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Beautiful Tea Gardens</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Incredible Snow Peaks</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;13,999</span></div>
                     <a href="amritsar-to-manali.html" class="luxury-btn">Enquire</a>
                 </div>
@@ -1284,20 +1346,20 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #F3E5F5; border-color: rgba(243, 229, 245, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/dalhousie.jpg" alt="Dalhousie">
                     <div class="presidential-badge">★ Huge Valleys</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Dalhousie &amp; Khajjiar</h4>
+                <h4 class="text-dark fw-bold mb-2">Dalhousie &amp; Khajjiar</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>4 Days</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>4 Days</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> "Mini Switzerland" Khajjiar</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Tremendous Pine Valleys</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;10,999</span></div>
                     <a href="contact.html" class="luxury-btn">Enquire</a>
                 </div>
@@ -1305,22 +1367,22 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-            <div class="luxury-card h-100 d-flex flex-column">
+            <div class="luxury-card h-100 d-flex flex-column" style="background: #E3F2FD; border-color: rgba(227, 242, 253, 0.8);">
                 <div class="luxury-img-wrap">
                     <img src="img/kashmir.jpg" alt="Kashmir">
                     <div class="presidential-badge">★ Incredible Beauty</div>
                 </div>
-                <h4 class="text-white fw-bold mb-2">Amritsar to Kashmir</h4>
+                <h4 class="text-dark fw-bold mb-2">Amritsar to Kashmir</h4>
                 <div class="d-flex gap-3 mb-3">
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-clock me-1 text-warning"></i>10 Days</span>
-                    <span class="badge bg-dark border border-secondary text-light"><i class="fas fa-ship me-1 text-warning"></i>Houseboats</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-clock me-1 text-primary"></i>10 Days</span>
+                    <span class="badge bg-white border text-dark"><i class="fas fa-ship me-1 text-primary"></i>Houseboats</span>
                 </div>
                 <div class="mb-4 flex-grow-1">
                     <div class="tour-feature"><i class="fas fa-check"></i> Spectacular Srinagar</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Amazing Gulmarg Snow</div>
                     <div class="tour-feature"><i class="fas fa-check"></i> Gorgeous Dal Lake</div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3" style="border-color: rgba(255,255,255,0.1)!important;">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto gap-3 border-top pt-3" style="border-color: var(--text-muted)!important;">
                     <div><span class="gold-text fs-4 fw-bold">&#8377;59,999</span></div>
                     <a href="contact.html" class="luxury-btn">Enquire</a>
                 </div>
@@ -1334,19 +1396,19 @@
 <!-- Culture & Trivia Section Start -->
 <style>
 .culture-section {
-    background: linear-gradient(145deg, #0a0a0a, #141414);
+    background: #FFFDF7;
     padding: 100px 0;
-    color: #fff;
+    color: var(--text-main);
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-top: 1px solid rgba(255, 94, 0, 0.1);
 }
 .culture-section::before {
     content: '';
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255, 94, 0, 0.05) 0%, transparent 60%);
     z-index: 0;
     animation: pulseGlow 15s ease-in-out infinite alternate;
 }
@@ -1367,28 +1429,26 @@
     padding: 0 20px;
 }
 .quote-icon {
-    color: #d4af37;
+    color: #FF5E00;
     font-size: 2.5rem;
     margin-bottom: 25px;
     opacity: 0.6;
 }
 .wanderlust-quote {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.6rem;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.5;
-    background: linear-gradient(45deg, #f9d423, #d4af37, #ff4e50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--secondary);
 }
 .quote-author {
     margin-top: 25px;
     font-size: 0.9rem;
-    color: #888;
+    color: #596A7A;
     text-transform: uppercase;
     letter-spacing: 4px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .trivia-grid {
@@ -1397,29 +1457,27 @@
     gap: 30px;
 }
 .trivia-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: white;
+    border: 1px solid rgba(255, 94, 0, 0.1);
     border-radius: 12px;
     padding: 40px 30px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 .trivia-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    background: rgba(212, 175, 55, 0.03);
+    border-color: rgba(255, 94, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 94, 0, 0.1);
+    background: rgba(255, 94, 0, 0.05);
 }
 .trivia-card::after {
     content: 'CULTURE';
     position: absolute;
     top: 15px; right: -30px;
-    background: #d4af37;
-    color: #000;
+    background: #FF5E00;
+    color: white;
     font-size: 0.65rem;
     font-weight: 800;
     padding: 5px 35px;
@@ -1428,18 +1486,18 @@
 }
 .trivia-icon {
     font-size: 2rem;
-    color: #d4af37;
+    color: #FF5E00;
     margin-bottom: 20px;
 }
 .trivia-title {
     font-size: 1.25rem;
-    color: #fff;
+    color: var(--text-main);
     margin-bottom: 15px;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 .trivia-text {
-    color: #a0a0a0;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.7;
 }
@@ -1482,12 +1540,12 @@
 <style>
 /* Modern Luxurious Footer */
 .ultra-footer {
-    background: #050a15;
-    color: #e2e8f0;
+    background: var(--bg-light);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
     padding-top: 5rem;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .ultra-footer::before {
     content: '';
@@ -1498,20 +1556,18 @@
 .footer-brand {
     font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
     margin-bottom: 1rem;
     display: inline-block;
 }
 .footer-desc {
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
 .footer-heading {
-    color: #ffffff;
+    color: var(--text-main);
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -1527,7 +1583,7 @@
     margin-bottom: 0.8rem;
 }
 .ultra-footer-links a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -1537,11 +1593,11 @@
 .ultra-footer-links a i {
     font-size: 0.75rem;
     margin-right: 8px;
-    color: #3b82f6;
+    color: var(--primary);
     transition: transform 0.3s;
 }
 .ultra-footer-links a:hover {
-    color: #ffffff;
+    color: var(--text-main);
     transform: translateX(5px);
 }
 .ultra-footer-links a:hover i {
@@ -1551,14 +1607,14 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 1.25rem;
-    color: #94a3b8;
+    color: var(--text-muted);
 }
 .contact-icon {
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.1);
-    color: #3b82f6;
+    background: rgba(255, 94, 0, 0.1);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1568,12 +1624,12 @@
     border: 1px solid rgba(37, 99, 235, 0.2);
 }
 .contact-text a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: color 0.3s;
 }
 .contact-text a:hover {
-    color: #ffffff;
+    color: var(--text-main);
 }
 .footer-socials {
     display: flex;
@@ -1584,52 +1640,51 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: #e2e8f0;
+    background: rgba(255, 94, 0, 0.05);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-socials a:hover {
-    background: #3b82f6;
-    color: #ffffff;
+    background: var(--secondary);
+    color: var(--text-main);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-    border-color: #3b82f6;
+    box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
+    border-color: var(--primary);
 }
 .map-container {
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     height: 200px;
 }
 .map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: invert(90%) hue-rotate(180deg) contrast(80%); /* Dark map trick */
     transition: filter 0.5s ease;
 }
 .map-container:hover iframe {
-    filter: invert(0%); /* Normal map on hover */
+    filter: brightness(0.9);
 }
 .footer-bottom {
-    background: #020610;
+    background: var(--bg-light);
     padding: 1.5rem 0;
     margin-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-bottom p {
     margin: 0;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 .footer-bottom a {
-    color: #3b82f6;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
 }
@@ -1642,7 +1697,7 @@
             <!-- Brand & Info -->
             <div class="col-lg-3 col-md-6">
                 <a href="index.html" class="text-decoration-none">
-                    <span class="footer-brand">BudgetTrips<span style="color: #3b82f6;">.in</span></span>
+                    <span class="footer-brand">BudgetTrips<span style="color: var(--primary);">.in</span></span>
                 </a>
                 <p class="footer-desc">Redefining travel across Punjab and North India. Experience impeccable service, top-tier vehicles, and memories that last a lifetime.</p>
                 <div class="footer-socials">
@@ -1673,7 +1728,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
                         <a href="https://maps.google.com/maps?q=Shop+No.9,+First+Floor,+Ram+Talai+Chownk,+New+Golden+Avenue,+Amritsar" target="_blank">
                             Shop No.9, First Floor, Ram Talai Chownk, New Golden Avenue, Amritsar, Punjab
                         </a>
@@ -1683,7 +1738,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
                         <a href="tel:9878120686">+91 98781 20686</a>
                     </div>
                 </div>
@@ -1691,7 +1746,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
                         <a href="mailto:info@budgettrips.in">info@budgettrips.in</a>
                     </div>
                 </div>
@@ -1772,29 +1827,30 @@
         height: 80px;
         padding: 8px 0 calc(8px + var(--safe-bottom, 0px));
         padding-bottom: calc(8px + constant(safe-area-inset-bottom));
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: saturate(180%) blur(20px);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
-        border-top: 1px solid var(--app-border);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
         z-index: 10000;
         display: none;
         align-items: center;
         justify-content: space-around;
-        box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.05);
       }
       
       .bottom-app-bar a {
         flex: 1 1 0;
         text-align: center;
-        color: var(--app-text-secondary);
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 11px;
-        font-weight: 500;
+        font-weight: 600;
         padding: 8px 4px;
         border-radius: var(--app-radius-sm);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         margin: 0 4px;
+        font-family: 'DM Sans', sans-serif;
       }
       
       .bottom-app-bar a .app-icon {
@@ -1804,43 +1860,32 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       
-      .bottom-app-bar a.primary {
-        color: var(--app-primary);
-        font-weight: 600;
-        background: rgba(0, 123, 255, 0.1);
-      }
-      
       .bottom-app-bar a:hover:not(.primary) {
-        color: var(--app-text-primary);
+        color: var(--primary);
         transform: translateY(-2px);
       }
       
-      .bottom-app-bar a.primary:hover {
-        background: rgba(0, 123, 255, 0.15);
-        transform: translateY(-1px);
-      }
-      
       .bottom-app-bar a.whatsapp {
-        color: #25d366;
+        color: var(--secondary);
       }
       
       .bottom-app-bar a.whatsapp:hover {
-        background: rgba(37, 211, 102, 0.1);
-        color: #20b954;
+        background: rgba(30, 101, 51, 0.1);
+        color: #154724;
       }
       
       .bottom-app-bar a.book {
-        color: var(--app-accent);
+        color: var(--primary);
       }
       
       .bottom-app-bar a.book:hover {
-        background: rgba(255, 107, 53, 0.1);
-        color: #e55a2b;
+        background: rgba(255, 94, 0, 0.1);
+        color: #E85D04;
       }
       
       /* Floating Action Button Style for Call */
       .bottom-app-bar a.primary {
-        background: var(--app-primary);
+        background: var(--primary);
         color: white;
         border-radius: 50%;
         width: 56px;
@@ -1850,9 +1895,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(255, 94, 0, 0.3);
         font-size: 10px;
-        font-weight: 600;
+        font-weight: 700;
+        border: 2px solid #FFFDF7;
       }
       
       .bottom-app-bar a.primary .app-icon {
@@ -1861,9 +1907,9 @@
       }
       
       .bottom-app-bar a.primary:hover {
-        background: var(--app-primary-dark);
+        background: #E85D04;
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+        box-shadow: 0 6px 16px rgba(255, 94, 0, 0.4);
       }
       
       /* Responsive adjustments */
@@ -2067,7 +2113,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Show install button
       const installBtn = document.createElement('div');
       installBtn.innerHTML = `
-        <div style="position: fixed; top: 60px; left: 50%; transform: translateX(-50%); background: #007bff; color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;" onclick="installApp()">
+        <div style="position: fixed; top: 60px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;" onclick="installApp()">
           📱 Install App
         </div>
       `;
@@ -2245,3 +2291,4 @@ document.addEventListener('DOMContentLoaded', function() {
     </body>
 
 </html>
+

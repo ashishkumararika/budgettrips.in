@@ -53,7 +53,245 @@
 
           gtag('config', 'AW-17262338235');
         </script>
-        </head>
+        <style>
+    :root {
+      --primary: #FF5E00; /* Sunrise Orange */
+      --secondary: #1E6533; /* Forest Green */
+      --accent: #E85D04; 
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.9);
+      --bg-light: #FFFDF7; /* Cream white background */
+      --text-main: #2C3E50; /* Dark slate for readability */
+      --text-muted: #596A7A;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.08);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-main);
+    }
+    
+    /* Elegant Nav */
+    .new-nav {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .new-nav .nav-link {
+      font-weight: 500;
+      color: var(--text-main) !important;
+      padding: 1rem 1.5rem !important;
+      position: relative;
+    }
+    .new-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 8px; left: 1.5rem; right: 1.5rem;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .new-nav .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Cinematic Hero */
+    .new-hero {
+      position: relative;
+      height: 90vh;
+      min-height: 700px;
+      background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      border-radius: 0 0 40px 40px;
+      overflow: hidden;
+    }
+    .new-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* Remove the old dark overlay */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--text-main);
+    }
+    .hero-title {
+      font-size: 5rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      text-shadow: none;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      color: var(--text-muted);
+    }
+    
+    /* Glassmorphism Booking Widget */
+    .booking-widget {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      color: var(--text-main);
+      transform: translateY(20px);
+      animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes floatUp {
+      to { transform: translateY(0); }
+    }
+    
+    .widget-btn {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-call { background: var(--primary); color: white; border: none; }
+    .btn-call:hover { background: #E85D04; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3); }
+    .btn-wa { background: #25d366; color: white; border: none; }
+    .btn-wa:hover { background: #1ebd57; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
+
+    /* Bento Grid Services */
+    .bento-section {
+      padding: 6rem 0;
+      background-color: var(--bg-light);
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(300px, auto);
+      gap: 1.5rem;
+    }
+    .bento-item {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      border: 1px solid rgba(255, 94, 0, 0.05);
+    }
+    .bento-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -12px rgba(255, 94, 0, 0.15);
+      border-color: rgba(255, 94, 0, 0.2);
+    }
+    .bento-large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, white, #FFF3E0); }
+    .bento-wide { grid-column: span 2; grid-row: span 1; }
+    
+    .bento-icon {
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      margin-bottom: 2rem;
+      transition: transform 0.3s;
+      background: rgba(255, 94, 0, 0.1);
+      color: var(--primary);
+    }
+    .bento-item:hover .bento-icon { transform: scale(1.1); background: var(--primary); color: white; }
+    
+    .bento-item h3 { font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; }
+    .bento-item p { color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.6; font-family: 'DM Sans', sans-serif; }
+    .bento-link { font-weight: 700; color: var(--secondary); display: inline-flex; align-items: center; transition: gap 0.3s; font-family: 'DM Sans', sans-serif; }
+    .bento-item:hover .bento-link { gap: 10px; color: var(--primary); }
+    .bento-item .bento-link i { transition: transform 0.3s; }
+    .bento-item:hover .bento-link i { transform: translateX(5px); }
+
+    /* Fleet Cards */
+    .fleet-section { background: white; padding: 5rem 0; border-radius: 40px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); }
+    .fleet-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 94, 0, 0.1);
+      transition: all 0.3s;
+    }
+    .fleet-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 94, 0, 0.15); border-color: rgba(255, 94, 0, 0.3); }
+    .fleet-img-wrap {
+      height: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: #f1f5f9;
+    }
+    .fleet-img-wrap img {
+      width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s;
+    }
+    .fleet-card:hover .fleet-img-wrap img { transform: scale(1.08); }
+
+    @media (max-width: 991px) {
+      .hero-title { font-size: 3.5rem; }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(300px, auto); }
+      .bento-large { grid-column: span 2; grid-row: span 1; }
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-large, .bento-wide { grid-column: span 1; }
+      .new-hero { padding-top: 100px; height: auto; padding-bottom: 60px; min-height: auto; }
+    }
+  </style>
+  
+    <style>
+      /* Enforce New Theme Colors Everywhere */
+      :root {
+        --bs-primary: #FF5E00;
+        --bs-primary-rgb: 255, 94, 0;
+      }
+      .text-primary { color: var(--primary) !important; }
+      .bg-primary { background-color: var(--primary) !important; }
+      #spinner .text-secondary { color: var(--primary) !important;}
+      .btn-primary { 
+        background-color: var(--primary) !important; 
+        border-color: var(--primary) !important;
+        color: white !important;
+      }
+      .btn-primary:hover {
+        background-color: #E85D04 !important;
+        border-color: #E85D04 !important;
+      }
+    </style>
+
+  </head>
 
   <body>
     <!-- Spinner Start -->
@@ -521,22 +759,15 @@
 </div>
 <!-- Premium Announcement Marquee End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-      <div class="container text-center py-5">
-        <h1 class="text-white display-4">Amritsar to Rishikesh Tour Package</h1>
-        <ol class="breadcrumb justify-content-center text-white mb-0">
-          <li class="breadcrumb-item">
-            <a href="index.html" class="text-white">Home</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="tours.html" class="text-white">Tours</a>
-          </li>
-          <li class="breadcrumb-item active text-secondary">Rishikesh Tour</li>
-        </ol>
+    <!-- Modern Hero Start -->
+    <div class="new-hero" style="min-height: 450px; height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);">
+      <div class="container relative z-index-2">
+        <h1 class="hero-title" style="font-size: 3rem; color: var(--text-main); font-weight: 700; text-transform: uppercase;">
+          <span style="color: var(--primary);">Amritsar to Rishikesh Tour Package</span>
+        </h1>
       </div>
     </div>
-    <!-- Header End -->
+    <!-- Modern Hero End -->
 
     <!-- Tour Detail Start -->
     <div class="container py-5">
@@ -652,12 +883,12 @@
 <style>
 /* Modern Luxurious Footer */
 .ultra-footer {
-    background: #050a15;
-    color: #e2e8f0;
+    background: var(--bg-light);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
     padding-top: 5rem;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .ultra-footer::before {
     content: '';
@@ -668,20 +899,18 @@
 .footer-brand {
     font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
     margin-bottom: 1rem;
     display: inline-block;
 }
 .footer-desc {
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
 .footer-heading {
-    color: #ffffff;
+    color: var(--text-main);
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -697,7 +926,7 @@
     margin-bottom: 0.8rem;
 }
 .ultra-footer-links a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -707,11 +936,11 @@
 .ultra-footer-links a i {
     font-size: 0.75rem;
     margin-right: 8px;
-    color: #3b82f6;
+    color: var(--primary);
     transition: transform 0.3s;
 }
 .ultra-footer-links a:hover {
-    color: #ffffff;
+    color: var(--text-main);
     transform: translateX(5px);
 }
 .ultra-footer-links a:hover i {
@@ -721,14 +950,14 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 1.25rem;
-    color: #94a3b8;
+    color: var(--text-muted);
 }
 .contact-icon {
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.1);
-    color: #3b82f6;
+    background: rgba(255, 94, 0, 0.1);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -738,12 +967,12 @@
     border: 1px solid rgba(37, 99, 235, 0.2);
 }
 .contact-text a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: color 0.3s;
 }
 .contact-text a:hover {
-    color: #ffffff;
+    color: var(--text-main);
 }
 .footer-socials {
     display: flex;
@@ -754,52 +983,51 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: #e2e8f0;
+    background: rgba(255, 94, 0, 0.05);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-socials a:hover {
-    background: #3b82f6;
-    color: #ffffff;
+    background: var(--secondary);
+    color: var(--text-main);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-    border-color: #3b82f6;
+    box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
+    border-color: var(--primary);
 }
 .map-container {
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     height: 200px;
 }
 .map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: invert(90%) hue-rotate(180deg) contrast(80%); /* Dark map trick */
     transition: filter 0.5s ease;
 }
 .map-container:hover iframe {
-    filter: invert(0%); /* Normal map on hover */
+    filter: brightness(0.9);
 }
 .footer-bottom {
-    background: #020610;
+    background: var(--bg-light);
     padding: 1.5rem 0;
     margin-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-bottom p {
     margin: 0;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 .footer-bottom a {
-    color: #3b82f6;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
 }
@@ -812,7 +1040,7 @@
             <!-- Brand & Info -->
             <div class="col-lg-3 col-md-6">
                 <a href="index.html" class="text-decoration-none">
-                    <span class="footer-brand">BudgetTrips<span style="color: #3b82f6;">.in</span></span>
+                    <span class="footer-brand">BudgetTrips<span style="color: var(--primary);">.in</span></span>
                 </a>
                 <p class="footer-desc">Redefining travel across Punjab and North India. Experience impeccable service, top-tier vehicles, and memories that last a lifetime.</p>
                 <div class="footer-socials">
@@ -843,7 +1071,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
                         <a href="https://maps.google.com/maps?q=Shop+No.9,+First+Floor,+Ram+Talai+Chownk,+New+Golden+Avenue,+Amritsar" target="_blank">
                             Shop No.9, First Floor, Ram Talai Chownk, New Golden Avenue, Amritsar, Punjab
                         </a>
@@ -853,7 +1081,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
                         <a href="tel:9878120686">+91 98781 20686</a>
                     </div>
                 </div>
@@ -861,7 +1089,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
                         <a href="mailto:info@budgettrips.in">info@budgettrips.in</a>
                     </div>
                 </div>
@@ -900,24 +1128,7 @@
         </div>
     </div>
 </footer>
-
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-white">
-              All rights reserved Â© 2025 <strong>Budgettrips</strong>
-            </span>
-          </div>
-          <div class="col-md-6 text-center text-md-end text-white">
-            Powered by
-            <a class="border-bottom text-white" href="#">Budgettrips</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Copyright End -->
+<!-- Copyright End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square back-to-top"

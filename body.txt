@@ -1,311 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6ZJR65EPN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-G6ZJR65EPN');
-    </script>
-    <meta charset="utf-8" />
-    <title>Amritsar to Manali Tour Package - Scenic Hills & Adventure | Budgettrips</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Amritsar to Manali tour, Manali tour package, Himachal tour from Amritsar, Manali travel, Rohtang Pass, Budget Manali trip">
-    <meta name="description" content="Escape to the hills with our Amritsar to Manali Tour Package. Enjoy breathtaking landscapes, snow adventures, and local attractions with Budgettrips.">
-    
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-          <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17262338235"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-17262338235');
-        </script>
-        <style>
-    :root {
-      --primary: #FF5E00; /* Sunrise Orange */
-      --secondary: #1E6533; /* Forest Green */
-      --accent: #E85D04; 
-      --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.9);
-      --bg-light: #FFFDF7; /* Cream white background */
-      --text-main: #2C3E50; /* Dark slate for readability */
-      --text-muted: #596A7A;
-      --radius-lg: 24px;
-      --radius-xl: 32px;
-      --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.08);
-      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
-    }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-light);
-      -webkit-font-smoothing: antialiased;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      color: var(--text-main);
-    }
-    
-    /* Elegant Nav */
-    .new-nav {
-      background: var(--surface-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .new-nav .nav-link {
-      font-weight: 500;
-      color: var(--text-main) !important;
-      padding: 1rem 1.5rem !important;
-      position: relative;
-    }
-    .new-nav .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 8px; left: 1.5rem; right: 1.5rem;
-      height: 2px;
-      background: var(--primary);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .new-nav .nav-link:hover::after {
-      transform: scaleX(1);
-    }
-
-    /* Cinematic Hero */
-    .new-hero {
-      position: relative;
-      height: 90vh;
-      min-height: 700px;
-      background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);
-      display: flex;
-      align-items: center;
-      padding-top: 80px;
-      border-radius: 0 0 40px 40px;
-      overflow: hidden;
-    }
-    .new-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      /* Remove the old dark overlay */
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: var(--text-main);
-    }
-    .hero-title {
-      font-size: 5rem;
-      line-height: 1.1;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--text-main);
-      text-shadow: none;
-    }
-    .hero-subtitle {
-      font-size: 1.25rem;
-      font-weight: 400;
-      opacity: 0.95;
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-      color: var(--text-muted);
-    }
-    
-    /* Glassmorphism Booking Widget */
-    .booking-widget {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      color: var(--text-main);
-      transform: translateY(20px);
-      animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes floatUp {
-      to { transform: translateY(0); }
-    }
-    
-    .widget-btn {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .btn-call { background: var(--primary); color: white; border: none; }
-    .btn-call:hover { background: #E85D04; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3); }
-    .btn-wa { background: #25d366; color: white; border: none; }
-    .btn-wa:hover { background: #1ebd57; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
-
-    /* Bento Grid Services */
-    .bento-section {
-      padding: 6rem 0;
-      background-color: var(--bg-light);
-    }
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: minmax(300px, auto);
-      gap: 1.5rem;
-    }
-    .bento-item {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-decoration: none;
-      border: 1px solid rgba(255, 94, 0, 0.05);
-    }
-    .bento-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 60px -12px rgba(255, 94, 0, 0.15);
-      border-color: rgba(255, 94, 0, 0.2);
-    }
-    .bento-large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, white, #FFF3E0); }
-    .bento-wide { grid-column: span 2; grid-row: span 1; }
-    
-    .bento-icon {
-      width: 64px; height: 64px;
-      border-radius: 18px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
-      margin-bottom: 2rem;
-      transition: transform 0.3s;
-      background: rgba(255, 94, 0, 0.1);
-      color: var(--primary);
-    }
-    .bento-item:hover .bento-icon { transform: scale(1.1); background: var(--primary); color: white; }
-    
-    .bento-item h3 { font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; }
-    .bento-item p { color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.6; font-family: 'DM Sans', sans-serif; }
-    .bento-link { font-weight: 700; color: var(--secondary); display: inline-flex; align-items: center; transition: gap 0.3s; font-family: 'DM Sans', sans-serif; }
-    .bento-item:hover .bento-link { gap: 10px; color: var(--primary); }
-    .bento-item .bento-link i { transition: transform 0.3s; }
-    .bento-item:hover .bento-link i { transform: translateX(5px); }
-
-    /* Fleet Cards */
-    .fleet-section { background: white; padding: 5rem 0; border-radius: 40px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); }
-    .fleet-card {
-      background: var(--bg-light);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(255, 94, 0, 0.1);
-      transition: all 0.3s;
-    }
-    .fleet-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 94, 0, 0.15); border-color: rgba(255, 94, 0, 0.3); }
-    .fleet-img-wrap {
-      height: 200px;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      background: #f1f5f9;
-    }
-    .fleet-img-wrap img {
-      width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s;
-    }
-    .fleet-card:hover .fleet-img-wrap img { transform: scale(1.08); }
-
-    @media (max-width: 991px) {
-      .hero-title { font-size: 3.5rem; }
-      .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(300px, auto); }
-      .bento-large { grid-column: span 2; grid-row: span 1; }
-    }
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .bento-grid { grid-template-columns: 1fr; }
-      .bento-large, .bento-wide { grid-column: span 1; }
-      .new-hero { padding-top: 100px; height: auto; padding-bottom: 60px; min-height: auto; }
-    }
-  </style>
-  
-    <style>
-      /* Enforce New Theme Colors Everywhere */
-      :root {
-        --bs-primary: #FF5E00;
-        --bs-primary-rgb: 255, 94, 0;
-      }
-      .text-primary { color: var(--primary) !important; }
-      .bg-primary { background-color: var(--primary) !important; }
-      #spinner .text-secondary { color: var(--primary) !important;}
-      .btn-primary { 
-        background-color: var(--primary) !important; 
-        border-color: var(--primary) !important;
-        color: white !important;
-      }
-      .btn-primary:hover {
-        background-color: #E85D04 !important;
-        border-color: #E85D04 !important;
-      }
-    </style>
-
-  </head>
-
-  <body>
     <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div
-        class="spinner-border text-secondary"
-        style="width: 3rem; height: 3rem"
-        role="status"
-      >
-        <span class="sr-only">Loading...</span>
-      </div>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
     <!-- Spinner End -->
 
@@ -759,52 +458,301 @@
 </div>
 <!-- Premium Announcement Marquee End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-      <div class="container text-center py-5">
-        <h1 class="text-white display-4">Booking Page </h1>
-        <ol class="breadcrumb justify-content-center text-white mb-0">
-          <li class="breadcrumb-item">
-            <a href="index.html" class="text-white">Home</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="tours.html" class="text-white">Tours</a>
-          </li>
-          <li class="breadcrumb-item active text-secondary">Booking Page</li>
-        </ol>
-      </div>
-    </div>
-
+    <!-- Hero Section -->
 <style>
-    .card{
-        width: 505;
-        padding: 50px 0px;
-    }
-    .card .btn{
-        width: 100px;
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 2px 15px;;
-    }
+/* Luxury About Page Styles */
+.about-luxury-hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 180px 0 100px 0;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+.about-luxury-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    animation: goldPulse 15s ease-in-out infinite alternate;
+    z-index: 0;
+}
+@keyframes goldPulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.luxury-quote-box {
+    margin-bottom: 30px;
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.05);
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+.luxury-quote-text {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #d4af37;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, #fff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-title span {
+    background: linear-gradient(45deg, #f9d423, #d4af37, #ff4e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-subtitle {
+    font-size: 1.25rem;
+    color: #a0a0a0;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background: #000;
+    padding: 100px 0;
+    position: relative;
+}
+.glass-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 50px;
+    height: 100%;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.glass-box:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+.glass-icon {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+.glass-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.glass-text {
+    color: #a0a0a0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Elite Stats */
+.elite-stats {
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    padding: 80px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+.stat-item {
+    text-align: center;
+    padding: 30px;
+}
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #d4af37, #f9d423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stat-label {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Luxury Testimonials */
+.reviews-section {
+    background: #050505;
+    padding: 100px 0;
+}
+.review-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.review-card::before {
+    content: '\f10d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+    color: rgba(212, 175, 55, 0.1);
+}
+.review-text {
+    color: #dfdfdf;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+.review-author {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.review-location {
+    color: #d4af37;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.review-stars {
+    color: #d4af37;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
 </style>
 
-<center>
+<section class="about-luxury-hero">
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="luxury-quote-box">
+                    <i class="fa fa-quote-left" style="color: #d4af37; margin-right: 10px;"></i>
+                    <span class="luxury-quote-text">"A journey of a thousand miles begins with a single step, guided by elegance."</span>
+                </div>
+                <h1 class="about-title">The Standard of<br><span>Premium Mobility.</span></h1>
+                <p class="about-subtitle">BudgetTrips was founded with a singular vision: to elevate travel across North India from a mere commute into a masterclass in comfort, reliability, and luxury. We are not just a transport company; we are curators of impeccable journeys.</p>
+                <div class="mt-5">
+                    <a href="mailto:info@budgettrips.in" class="btn rounded-pill px-5 py-3 shadow" style="background: #d4af37; color: #000; font-weight: 700; letter-spacing: 1px;"><i class="fas fa-envelope me-2"></i> Contact Concierge</a>
+                </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block text-end">
+                <div style="position: relative; display: inline-block;">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px solid #d4af37; border-radius: 20px; z-index: 1;"></div>
+                    <img src="img/about-2.png" alt="Premium Fleet" class="img-fluid rounded shadow-lg" style="position: relative; z-index: 2; border-radius: 20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Elite Philosophy -->
+<section class="philosophy-section">
+    <div class="container">
+        <div class="text-center mb-5 pb-4">
+            <h6 class="text-uppercase" style="color: #d4af37; letter-spacing: 3px; font-weight: 700;">Our Philosophy</h6>
+            <h2 class="text-white" style="font-size: 2.5rem; font-weight: 300;">Why Elites Choose Us</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-box">
+                    <i class="fas fa-gem glass-icon"></i>
+                    <h3 class="glass-title">Uncompromising Quality</h3>
+                    <p class="glass-text">Every vehicle in our fleet is meticulously maintained. From pristine interiors to rigorous mechanical checks, we ensure your environment is spotless.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-box">
+                    <i class="fas fa-user-tie glass-icon"></i>
+                    <h3 class="glass-title">Expert Chauffeurs</h3>
+                    <p class="glass-text">Our drivers are seasoned professionals. Vetted, courteous, and deeply knowledgeable about the nuances of navigating North Indian terrain.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-box">
+                    <i class="fas fa-clock glass-icon"></i>
+                    <h3 class="glass-title">24/7 Precision Support</h3>
+                    <p class="glass-text">Travel doesn't sleep, and neither do we. Our dedicated support team monitors every journey to guarantee a seamless, zero-friction experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <div class="card">
-        <h2 class="text-success mb-3">Thank You!</h2>
-        <p>Your booking has been received. We'll contact you shortly.</p>
-        <center>
+<!-- Elite Stats -->
+<section class="elite-stats">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3 col-6 stat-item">
+                <div class="stat-number">10<span style="font-size: 2rem;">+</span></div>
+                <div class="stat-label">Years Heritage</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <div class="stat-number">12<span style="font-size: 2rem;">k+</span></div>
+                <div class="stat-label">Elite Clients</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <div class="stat-number">85<span style="font-size: 2rem;">+</span></div>
+                <div class="stat-label">Destinations</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <div class="stat-number">4.9<span style="font-size: 2rem;">/5</span></div>
+                <div class="stat-label">Global Rating</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <a href="index.html" class="btn btn-primary mt-3">Back to Home</a>
-        </center>
-      </div>
-    </center>
+<!-- Luxury Reviews -->
+<section class="reviews-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-uppercase" style="color: #d4af37; letter-spacing: 3px; font-weight: 700;">Testimonials</h6>
+            <h2 class="text-white" style="font-size: 2.5rem; font-weight: 300;">Words from our Guests</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="review-card">
+                    <p class="review-text">"A masterclass in chauffeured service. Our family trip to Himachal was handled with impeccable professionalism from start to finish."</p>
+                    <div class="review-author">Anjali Verma</div>
+                    <div class="review-location">Mumbai, India</div>
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="review-card">
+                    <p class="review-text">"I regularly book with them for my corporate VIPs arriving in Amritsar. The Innova fleet is flawless, and the drivers are incredibly polished."</p>
+                    <div class="review-author">Rahul Mehta</div>
+                    <div class="review-location">New Delhi, India</div>
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="review-card">
+                    <p class="review-text">"The only way to explore Punjab. They managed our entire heritage tour. Absolute luxury and complete peace of mind."</p>
+                    <div class="review-author">Simran Kaur</div>
+                    <div class="review-location">Chandigarh, India</div>
+                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-
-    <!-- Footer Start -->
-
+<!-- Footer Start -->
 <style>
 /* Modern Luxurious Footer */
 .ultra-footer {
@@ -1055,11 +1003,11 @@
 </footer>
 <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
 
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1068,10 +1016,184 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-  <!-- Floating Call, WhatsApp & Get A Quote Buttons Start -->
+
+    <!-- Modern Mobile App Bottom Navigation -->
+    <style>
+      /* Mobile App Bottom Bar - iOS/Android Style */
+      @media (max-width: 768px) {
+        body { 
+          padding-bottom: calc(80px + var(--safe-bottom, 0px)) !important; 
+          padding-bottom: calc(80px + constant(safe-area-inset-bottom)) !important;
+          padding-top: var(--safe-top, 0px) !important;
+          padding-top: constant(safe-area-inset-top) !important;
+        }
+        .bottom-app-bar { display: flex !important; }
+        .back-to-top { display: none !important; }
+      }
+      
+      .bottom-app-bar {
+        position: fixed;
+        left: 0; 
+        right: 0; 
+        bottom: 0;
+        height: 80px;
+        padding: 8px 0 calc(8px + var(--safe-bottom, 0px));
+        padding-bottom: calc(8px + constant(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.05);
+      }
+      
+      .bottom-app-bar a {
+        flex: 1 1 0;
+        text-align: center;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 8px 4px;
+        border-radius: var(--app-radius-sm);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        margin: 0 4px;
+        font-family: 'DM Sans', sans-serif;
+      }
+      
+      .bottom-app-bar a .app-icon {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 4px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .bottom-app-bar a:hover:not(.primary) {
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+      
+      .bottom-app-bar a.whatsapp {
+        color: var(--secondary);
+      }
+      
+      .bottom-app-bar a.whatsapp:hover {
+        background: rgba(30, 101, 51, 0.1);
+        color: #154724;
+      }
+      
+      .bottom-app-bar a.book {
+        color: var(--primary);
+      }
+      
+      .bottom-app-bar a.book:hover {
+        background: rgba(255, 94, 0, 0.1);
+        color: #E85D04;
+      }
+      
+      /* Floating Action Button Style for Call */
+      .bottom-app-bar a.primary {
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        margin: -8px 8px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(255, 94, 0, 0.3);
+        font-size: 10px;
+        font-weight: 700;
+        border: 2px solid #FFFDF7;
+      }
+      
+      .bottom-app-bar a.primary .app-icon {
+        font-size: 24px;
+        margin-bottom: 2px;
+      }
+      
+      .bottom-app-bar a.primary:hover {
+        background: #E85D04;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 94, 0, 0.4);
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        .bottom-app-bar {
+          height: 75px;
+          padding: 6px 0 calc(6px + var(--safe-bottom, 0px));
+        }
+        
+        .bottom-app-bar a {
+          font-size: 10px;
+          margin: 0 2px;
+        }
+        
+        .bottom-app-bar a .app-icon {
+          font-size: 20px;
+          margin-bottom: 3px;
+        }
+        
+        .bottom-app-bar a.primary {
+          width: 52px;
+          height: 52px;
+          margin: -6px 6px 0;
+        }
+        
+        .bottom-app-bar a.primary .app-icon {
+          font-size: 22px;
+        }
+        
+        body { 
+          padding-bottom: calc(75px + var(--safe-bottom, 0px)) !important; 
+        }
+      }
+    </style>
+    
+    <nav class="bottom-app-bar" aria-label="Quick actions">
+      <a href="https://wa.me/919878120686?text=Hi%2C%20I%20want%20to%20book%20a%20taxi" target="_blank" class="whatsapp" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp app-icon" aria-hidden="true"></i>
+        WhatsApp
+      </a>
+      <a href="tel:9878120686" class="primary" aria-label="Call Now">
+        <i class="bi bi-telephone-fill app-icon" aria-hidden="true"></i>
+        Call
+      </a>
+      <a href="booking.html" class="book" aria-label="Book Taxi">
+        <i class="bi bi-calendar-check app-icon" aria-hidden="true"></i>
+        Book
+      </a>
+      <a href="#top" class="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <i class="bi bi-arrow-up app-icon" aria-hidden="true"></i>
+        Top
+      </a>
+    </nav>
+      <a href="https://wa.me/919878120686?text=Hi%2C%20I%20want%20to%20enquire%20about%20booking." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        WhatsApp
+      </a>
+      <a href="booking.html" aria-label="Book">
+        <i class="bi bi-calendar-check" aria-hidden="true"></i>
+        Book
+      </a>
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Top">
+        <i class="bi bi-arrow-up-circle" aria-hidden="true"></i>
+        Top
+      </a>
+    </nav>
+
+    <!-- Floating Call, WhatsApp & Get A Quote Buttons Start -->
 <style>
 .fab-buttons {
   position: fixed;
@@ -1146,6 +1268,3 @@
 </nav>
 
 <!-- Floating Call, WhatsApp & Get A Quote Buttons End -->
-</body>
-</html>
-

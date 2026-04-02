@@ -1,6 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <title>Our Travel Services | Budgettrips Amritsar</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="keywords" content="travel services Amritsar, Budgettrips services, taxi booking, hotel booking, tour packages, bus booking Amritsar" />
+    <meta name="description" content="Explore a wide range of travel services offered by Budgettrips in Amritsar including taxi booking, hotel reservations, tour packages, and bus bookings." />
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6ZJR65EPN"></script>
     <script>
@@ -10,12 +16,6 @@
 
       gtag('config', 'G-G6ZJR65EPN');
     </script>
-    <meta charset="utf-8" />
-    <title>Amritsar to Manali Tour Package - Scenic Hills & Adventure | Budgettrips</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Amritsar to Manali tour, Manali tour package, Himachal tour from Amritsar, Manali travel, Rohtang Pass, Budget Manali trip">
-    <meta name="description" content="Escape to the hills with our Amritsar to Manali Tour Package. Enjoy breathtaking landscapes, snow adventures, and local attractions with Budgettrips.">
-    
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -694,8 +694,8 @@
 <!-- Premium Announcement Marquee Start -->
 <style>
 .premium-marquee-wrapper {
-    background: #0a0a0a;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--bg-light);
+    border: 1px solid rgba(255, 94, 0, 0.15);
     overflow: hidden;
     padding: 8px 0;
     position: fixed;
@@ -714,11 +714,11 @@
 }
 .premium-marquee-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #000, transparent);
+    background: linear-gradient(to right, var(--bg-light), transparent);
 }
 .premium-marquee-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #000, transparent);
+    background: linear-gradient(to left, var(--bg-light), transparent);
 }
 .premium-marquee-content {
     display: flex;
@@ -726,7 +726,7 @@
     animation: scrollMarquee 35s linear infinite;
 }
 .premium-marquee-content span {
-    color: #d4af37;
+    color: var(--primary);
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -759,49 +759,122 @@
 </div>
 <!-- Premium Announcement Marquee End -->
 
-    <!-- Header Start -->
+    <!-- Services Header Start -->
     <div class="container-fluid bg-breadcrumb">
       <div class="container text-center py-5">
-        <h1 class="text-white display-4">Booking Page </h1>
+        <h1 class="text-white display-4 mb-3">Our Services</h1>
         <ol class="breadcrumb justify-content-center text-white mb-0">
           <li class="breadcrumb-item">
             <a href="index.html" class="text-white">Home</a>
           </li>
-          <li class="breadcrumb-item">
-            <a href="tours.html" class="text-white">Tours</a>
-          </li>
-          <li class="breadcrumb-item active text-secondary">Booking Page</li>
+          <li class="breadcrumb-item active text-secondary">Services</li>
         </ol>
       </div>
     </div>
+    <!-- Services Header End -->
 
-<style>
-    .card{
-        width: 505;
-        padding: 50px 0px;
-    }
-    .card .btn{
-        width: 100px;
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 2px 15px;;
-    }
-</style>
-
-<center>
-
-
-    <div class="card">
-        <h2 class="text-success mb-3">Thank You!</h2>
-        <p>Your booking has been received. We'll contact you shortly.</p>
-        <center>
-
-                <a href="index.html" class="btn btn-primary mt-3">Back to Home</a>
-        </center>
+    <!-- Services Section Start -->
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="text-primary fw-bold">
+          Explore Our Premium Travel Services
+        </h2>
+        <p class="text-muted">
+          All services are designed to provide you a hassle-free experience in
+          Amritsar and beyond.
+        </p>
       </div>
-    </center>
+      <div class="row g-4">
+        <!-- Taxi Services -->
+        <div class="col-lg-6">
+          <a href="taxi-services.html" class="text-decoration-none">
+            <div
+              class="p-5 bg-white border shadow-lg rounded-4 h-100 hover-effect d-flex align-items-center"
+            >
+              <div class="me-4">
+                <i class="fas fa-taxi fa-4x text-primary"></i>
+              </div>
+              <div>
+                <h3 class="text-dark">Taxi Services</h3>
+                <p class="text-muted mb-0">
+                  24x7 local and outstation taxi booking from Amritsar with
+                  professional drivers and sanitized cars.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Bus Tour Booking -->
+        <div class="col-lg-6">
+          <a href="bus-tour-booking.html" class="text-decoration-none">
+            <div
+              class="p-5 bg-white border shadow-lg rounded-4 h-100 hover-effect d-flex align-items-center"
+            >
+              <div class="me-4">
+                <i class="fas fa-bus-alt fa-4x text-success"></i>
+              </div>
+              <div>
+                <h3 class="text-dark">Bus Tour Booking</h3>
+                <p class="text-muted mb-0">
+                  Book half-day, full-day, and group tours in luxury AC or
+                  standard buses around Amritsar.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Hotel Booking -->
+        <div class="col-lg-6">
+          <a href="hotel-booking.html" class="text-decoration-none">
+            <div
+              class="p-5 bg-white border shadow-lg rounded-4 h-100 hover-effect d-flex align-items-center"
+            >
+              <div class="me-4">
+                <i class="fas fa-hotel fa-4x text-danger"></i>
+              </div>
+              <div>
+                <h3 class="text-dark">Hotel Booking</h3>
+                <p class="text-muted mb-0">
+                  Affordable and premium hotel options near Golden Temple,
+                  railway station, and key locations.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Outstation Tours -->
+        <div class="col-lg-6">
+          <a href="outstation-tours.html" class="text-decoration-none">
+            <div
+              class="p-5 bg-white border shadow-lg rounded-4 h-100 hover-effect d-flex align-items-center"
+            >
+              <div class="me-4">
+                <i class="fas fa-road fa-4x text-warning"></i>
+              </div>
+              <div>
+                <h3 class="text-dark">Outstation Tours</h3>
+                <p class="text-muted mb-0">
+                  Weekend getaways & multi-day trips from Amritsar to Himachal,
+                  Vaishno Devi, Delhi & more.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Services Section End -->
 
-
+    <!-- Optional CSS for hover effect -->
+    <style>
+      .hover-effect {
+        transition: all 0.3s ease-in-out;
+      }
+      .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+    </style>
 
     <!-- Footer Start -->
 
@@ -1148,4 +1221,3 @@
 <!-- Floating Call, WhatsApp & Get A Quote Buttons End -->
 </body>
 </html>
-

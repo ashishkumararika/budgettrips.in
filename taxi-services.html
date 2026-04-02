@@ -61,7 +61,263 @@
 
           gtag('config', 'AW-17262338235');
         </script>
-        </head>
+        
+<style>
+/* Global Mobile Responsiveness Fixes */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem !important; }
+    .display-4 { font-size: 2.5rem !important; }
+    .display-5 { font-size: 2rem !important; }
+    .display-6 { font-size: 1.75rem !important; }
+    .fs-5 { font-size: 1rem !important; }
+    .whatsapp-btn { width: 100%; text-align: center; }
+    .row.g-4 { gap: 1rem !important; }
+    section { padding: 3rem 0 !important; }
+    .p-40-mobile { padding: 25px !important; }
+}
+@media (min-width: 769px) {
+    .p-40-mobile { padding: 40px;" class="p-40-mobile }
+}
+</style>
+<style>
+    :root {
+      --primary: #FF5E00; /* Sunrise Orange */
+      --secondary: #1E6533; /* Forest Green */
+      --accent: #E85D04; 
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.9);
+      --bg-light: #FFFDF7; /* Cream white background */
+      --text-main: #2C3E50; /* Dark slate for readability */
+      --text-muted: #596A7A;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.08);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-main);
+    }
+    
+    /* Elegant Nav */
+    .new-nav {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .new-nav .nav-link {
+      font-weight: 500;
+      color: var(--text-main) !important;
+      padding: 1rem 1.5rem !important;
+      position: relative;
+    }
+    .new-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 8px; left: 1.5rem; right: 1.5rem;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .new-nav .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Cinematic Hero */
+    .new-hero {
+      position: relative;
+      height: 90vh;
+      min-height: 700px;
+      background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      border-radius: 0 0 40px 40px;
+      overflow: hidden;
+    }
+    .new-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* Remove the old dark overlay */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--text-main);
+    }
+    .hero-title {
+      font-size: 5rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      text-shadow: none;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      color: var(--text-muted);
+    }
+    
+    /* Glassmorphism Booking Widget */
+    .booking-widget {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      color: var(--text-main);
+      transform: translateY(20px);
+      animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes floatUp {
+      to { transform: translateY(0); }
+    }
+    
+    .widget-btn {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-call { background: var(--primary); color: white; border: none; }
+    .btn-call:hover { background: #E85D04; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3); }
+    .btn-wa { background: #25d366; color: white; border: none; }
+    .btn-wa:hover { background: #1ebd57; color: white; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
+
+    /* Bento Grid Services */
+    .bento-section {
+      padding: 6rem 0;
+      background-color: var(--bg-light);
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(300px, auto);
+      gap: 1.5rem;
+    }
+    .bento-item {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      border: 1px solid rgba(255, 94, 0, 0.05);
+    }
+    .bento-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -12px rgba(255, 94, 0, 0.15);
+      border-color: rgba(255, 94, 0, 0.2);
+    }
+    .bento-large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, white, #FFF3E0); }
+    .bento-wide { grid-column: span 2; grid-row: span 1; }
+    
+    .bento-icon {
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      margin-bottom: 2rem;
+      transition: transform 0.3s;
+      background: rgba(255, 94, 0, 0.1);
+      color: var(--primary);
+    }
+    .bento-item:hover .bento-icon { transform: scale(1.1); background: var(--primary); color: white; }
+    
+    .bento-item h3 { font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; }
+    .bento-item p { color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.6; font-family: 'DM Sans', sans-serif; }
+    .bento-link { font-weight: 700; color: var(--secondary); display: inline-flex; align-items: center; transition: gap 0.3s; font-family: 'DM Sans', sans-serif; }
+    .bento-item:hover .bento-link { gap: 10px; color: var(--primary); }
+    .bento-item .bento-link i { transition: transform 0.3s; }
+    .bento-item:hover .bento-link i { transform: translateX(5px); }
+
+    /* Fleet Cards */
+    .fleet-section { background: white; padding: 5rem 0; border-radius: 40px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); }
+    .fleet-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 94, 0, 0.1);
+      transition: all 0.3s;
+    }
+    .fleet-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 94, 0, 0.15); border-color: rgba(255, 94, 0, 0.3); }
+    .fleet-img-wrap {
+      height: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: #f1f5f9;
+    }
+    .fleet-img-wrap img {
+      width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s;
+    }
+    .fleet-card:hover .fleet-img-wrap img { transform: scale(1.08); }
+
+    @media (max-width: 991px) {
+      .hero-title { font-size: 3.5rem; }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(300px, auto); }
+      .bento-large { grid-column: span 2; grid-row: span 1; }
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-large, .bento-wide { grid-column: span 1; }
+      .new-hero { padding-top: 100px; height: auto; padding-bottom: 60px; min-height: auto; }
+    }
+  </style>
+  
+    <style>
+      /* Enforce New Theme Colors Everywhere */
+      :root {
+        --bs-primary: #FF5E00;
+        --bs-primary-rgb: 255, 94, 0;
+      }
+      .text-primary { color: var(--primary) !important; }
+      .bg-primary { background-color: var(--primary) !important; }
+      #spinner .text-secondary { color: var(--primary) !important;}
+      .btn-primary { 
+        background-color: var(--primary) !important; 
+        border-color: var(--primary) !important;
+        color: white !important;
+      }
+      .btn-primary:hover {
+        background-color: #E85D04 !important;
+        border-color: #E85D04 !important;
+      }
+    </style>
+
+  </head>
 
     <body>
 
@@ -128,11 +384,11 @@
         align-items: center;
     }
     .ultra-link {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        color: #334155;
+        font-family: 'DM Sans', sans-serif;
+        color: #596A7A;
         text-decoration: none;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         padding: 12px 0;
         display: inline-flex;
@@ -141,7 +397,7 @@
         white-space: nowrap;
     }
     .ultra-link:hover, .ultra-link.active {
-        color: #0f172a;
+        color: #FF5E00;
     }
     .ultra-link i.chevron {
         font-size: 0.7rem;
@@ -159,28 +415,28 @@
     }
     
     .ultra-cta {
-        background: #0f172a;
-        color: #ffffff !important;
+        background: #FF5E00;
+        color: var(--text-main) !important;
         padding: 10px 22px;
         border-radius: 100px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+        box-shadow: 0 4px 14px rgba(255, 94, 0, 0.2);
         white-space: nowrap;
     }
     .ultra-cta:hover {
-        background: #2563eb;
+        background: #E85D04;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 8px 24px rgba(255, 94, 0, 0.3);
     }
     
     .ultra-call-icon {
         width: 40px;
         height: 40px;
-        background: #22c55e;
+        background: #1E6533;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -189,10 +445,10 @@
         font-size: 1.1rem;
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+        box-shadow: 0 4px 14px rgba(30, 101, 51, 0.3);
     }
     .ultra-call-icon:hover {
-        background: #16a34a;
+        background: #154724;
         transform: scale(1.08);
     }
     
@@ -230,21 +486,21 @@
         align-items: center;
         gap: 12px;
         text-decoration: none;
-        color: #334155;
+        color: #2C3E50;
         padding: 10px 14px;
         border-radius: 10px;
         transition: all 0.2s;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-size: 0.9rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.95rem;
         font-weight: 500;
     }
     .dropdown-item-modern:hover {
-        background: #f1f5f9;
-        color: #0f172a;
+        background: rgba(255, 94, 0, 0.05);
+        color: #FF5E00;
         transform: translateX(4px);
     }
     .dropdown-item-modern i {
-        color: #2563eb;
+        color: #1E6533;
         width: 20px;
         text-align: center;
         font-size: 1rem;
@@ -265,7 +521,7 @@
         background: none;
         border: none;
         font-size: 1.8rem;
-        color: #0f172a;
+        color: var(--bg-light);
         cursor: pointer;
         padding: 4px;
     }
@@ -308,13 +564,13 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         font-size: 1.3rem;
         font-weight: 700;
-        color: #0f172a;
+        color: var(--bg-light);
         text-decoration: none;
         transition: color 0.2s;
         text-align: center;
     }
     .ultra-mobile-menu a:hover {
-        color: #2563eb;
+        color: var(--primary);
     }
     .mobile-close {
         position: absolute;
@@ -326,7 +582,7 @@
         height: 44px;
         border-radius: 50%;
         font-size: 1.2rem;
-        color: #0f172a;
+        color: var(--bg-light);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -344,7 +600,7 @@
       <!-- Changed Logo Here -->
       <a href="index.html" class="ultra-brand" style="margin-right: 20px; white-space: nowrap;">
         <img src="img/brand-logo.png" alt="Budget Trips Logo">
-        <span class="d-none d-lg-inline" style="font-weight: 800; font-size: 1.25rem; color: #003A66; margin-left: 10px; letter-spacing: 0.5px; white-space: nowrap;">BudgetTrips.in</span>
+        <span class="d-none d-lg-inline" style="font-weight: 800; font-size: 1.25rem; color: var(--text-main); margin-left: 10px; letter-spacing: 0.5px; white-space: nowrap;">BudgetTrips.in</span>
       </a>
       
       <ul class="ultra-links">
@@ -442,12 +698,12 @@
     </button>
     <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
         <img src="img/brand-logo.png" alt="Logo" style="height: 50px; object-fit: contain;">
-        <span style="font-weight: 800; font-size: 1.4rem; color: #003A66; margin-left: 10px;">BudgetTrips.in</span>
+        <span style="font-weight: 800; font-size: 1.4rem; color: var(--text-main); margin-left: 10px;">BudgetTrips.in</span>
     </div>
     <a href="index.html"><i class="fas fa-home me-2 text-primary"></i>Home</a>
     <a href="about.html"><i class="fas fa-info-circle me-2 text-info"></i>About</a>
     <a href="service.html"><i class="fas fa-concierge-bell me-2 text-success"></i>Services</a>
-    <a href="amritsar-to-manali.html"><i class="fas fa-mountain me-2 text-warning"></i>Tours</a>
+    <a href="amritsar-to-manali.html"><i class="fas fa-mountain me-2 text-primary"></i>Tours</a>
     <a href="swift.html"><i class="fas fa-car me-2" style="color:#6f42c1;"></i>Vehicles</a>
     <a href="golden-triangle-india.html"><i class="fas fa-map-marked-alt me-2 text-danger"></i>Packages</a>
     <a href="amritsar-travel-guide.html"><i class="fas fa-blog me-2" style="color:#fd7e14;"></i>Blogs</a>
@@ -458,8 +714,8 @@
 <!-- Premium Announcement Marquee Start -->
 <style>
 .premium-marquee-wrapper {
-    background: #0a0a0a;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--bg-light);
+    border: 1px solid rgba(255, 94, 0, 0.15);
     overflow: hidden;
     padding: 8px 0;
     position: fixed;
@@ -478,11 +734,11 @@
 }
 .premium-marquee-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #000, transparent);
+    background: linear-gradient(to right, var(--bg-light), transparent);
 }
 .premium-marquee-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #000, transparent);
+    background: linear-gradient(to left, var(--bg-light), transparent);
 }
 .premium-marquee-content {
     display: flex;
@@ -490,7 +746,7 @@
     animation: scrollMarquee 35s linear infinite;
 }
 .premium-marquee-content span {
-    color: #d4af37;
+    color: var(--primary);
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -525,145 +781,312 @@
 
   
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-      <div class="container text-center py-5" style="max-width: 900px">
-        <h1
-          class="text-white display-4 mb-3 wow fadeInDown"
-          data-wow-delay="0.1s"
-        >
-          Taxi Services in Amritsar
-        </h1>
-        <ol
-          class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown"
-          data-wow-delay="0.3s"
-        >
-          <li class="breadcrumb-item">
-            <a href="index.html" class="text-white">Home</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="service.html" class="text-white">Services</a>
-          </li>
-          <li class="breadcrumb-item active text-secondary">Taxi Services</li>
-        </ol>
-      </div>
-    </div>
-    <!-- Header End -->
-
-    <!-- Taxi Service Detail Section -->
-    <div class="container py-5">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <img
-            src="img/amritsar gurudwara.jpeg"
-            alt="Taxi Service Amritsar"
-            class="img-fluid rounded shadow"
-          />
-        </div>
-        <div class="col-lg-6">
-          <h2 class="text-primary mb-4">
-            Reliable & Affordable Taxi Services in Amritsar
-          </h2>
-          <p class="mb-3">
-            Whether you're arriving at the Amritsar Railway Station, Airport, or
-            exploring local attractions like the Golden Temple, Wagah Border, or
-            Jallianwala Bagh â€“ our taxi services ensure a smooth and hassle-free
-            experience. At Budgettrips, we offer clean, air-conditioned taxis
-            with professional drivers who know the city inside out.
-          </p>
-          <ul class="list-unstyled ps-3">
-            <li>
-              <i class="fas fa-check-circle text-primary me-2"></i>24x7 Pickup &
-              Drop Service
-            </li>
-            <li>
-              <i class="fas fa-check-circle text-primary me-2"></i>Airport,
-              Railway Station & Hotel Transfers
-            </li>
-            <li>
-              <i class="fas fa-check-circle text-primary me-2"></i>Local
-              Sightseeing & Custom Tours
-            </li>
-            <li>
-              <i class="fas fa-check-circle text-primary me-2"></i>Sanitized
-              Vehicles with Experienced Drivers
-            </li>
-            <li>
-              <i class="fas fa-check-circle text-primary me-2"></i>Competitive
-              Rates & Transparent Billing
-            </li>
-          </ul>
-          <a
-            href="booking.html"
-            class="btn btn-primary rounded-pill mt-4 px-4 py-2"
-            >Book a Taxi Now</a
-          >
-        </div>
-      </div>
-
-      <!-- Rates Table -->
-      <div class="mt-5">
-        <h3 class="mb-4 text-secondary">Taxi Fare Chart (Local)</h3>
-        <div class="table-responsive">
-          <table class="table table-bordered text-center">
-            <thead class="table-light">
-              <tr>
-                <th>Service Type</th>
-                <th>Vehicle Type</th>
-                <th>Rate (INR)</th>
-                <th>Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Airport Drop</td>
-                <td>Sedan (Dzire/Etios)</td>
-                <td>₹600</td>
-                <td>One-Way</td>
-              </tr>
-              <tr>
-                <td>Golden Temple to Wagah</td>
-                <td>SUV (Innova/Marazzo)</td>
-                <td>₹1500</td>
-                <td>Half-Day Tour</td>
-              </tr>
-              <tr>
-                <td>Full Day City Tour</td>
-                <td>Sedan</td>
-                <td>₹1800</td>
-                <td>8 Hrs/80 KM</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Call to Action -->
-      <div class="bg-primary text-white text-center p-5 rounded mt-5 shadow-sm">
-        <h4 class="mb-3">Need a ride around Amritsar?</h4>
-        <p class="mb-4">
-          Just give us a call at <strong>9878120686</strong> or book online.
-          We're just a ride away!
+    <!-- Taxi Services Hero Start -->
+    <div class="new-hero" style="min-height: 450px; height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E9 100%);">
+      <div class="container relative z-index-2">
+        <h1 class="hero-title" style="font-size: 4rem; color: var(--text-main);">Premium <span style="color: var(--primary);">Taxi Services</span></h1>
+        <p class="hero-subtitle mx-auto" style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px;">
+          Explore Amritsar and North India traversing in our immaculate, luxury-tier vehicles. Driven by professionals, maintained to perfection.
         </p>
-        <a
-          href="contact.html"
-          class="btn btn-light text-primary rounded-pill px-4 py-2"
-          >Contact Us</a
-        >
       </div>
     </div>
+    <!-- Taxi Services Hero End -->
 
-    <!-- Footer Start -->
+<!-- Modern Fleet Integration -->
+<style>
+:root {
+    --primary: #FF5E00; /* Sunrise Orange */
+    --secondary: #1E6533; /* Forest Green */
+    --accent: #E85D04;
+    --surface: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.9);
+    --bg-light: #FFFDF7; /* Cream white background */
+    --text-main: #2C3E50; /* Dark slate for readability */
+    --text-muted: #596A7A;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.08);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+/* Elite Fleet CSS */
+.fleet-elite-section {
+    background: var(--bg-light);
+    padding: 7rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.fleet-elite-card {
+    background: var(--bg-light);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255, 94, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
+}
+.fleet-elite-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(255, 94, 0, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+.fleet-elite-img {
+    height: 220px;
+    border-radius: 16px;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.fleet-elite-img img {
+    width: 90%;
+    height: auto;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+}
+.fleet-elite-card:hover .fleet-elite-img img {
+    transform: scale(1.1) translateX(10px);
+}
+.fleet-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--bg-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+.fleet-specs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+.spec-item {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.spec-item i {
+    color: var(--primary);
+}
+.fleet-price-box {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border: 1px solid #e2e8f0;
+}
+.fleet-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--bg-light);
+}
+.fleet-price span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.fleet-book-btn {
+    background: var(--bg-light);
+    color: var(--text-main) !important;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.fleet-book-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 94, 0, 0.3);
+}
+</style>
+
+<section class="fleet-elite-section" style="background-color: #FFFDF7 !important; color: #2C3E50 !important;">
+  <div class="container">
+    <div class="text-center mb-5 pb-3">
+      <span class="badge bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-pill mb-3 fw-bold border border-primary border-opacity-10" style="letter-spacing: 1px;">EXECUTIVE VEHICLES</span>
+      <h2 class="display-4 fw-bold mb-3" style="color: #2C3E50 !important; letter-spacing: -1px;" style="letter-spacing: -1px;">Our Premium Fleet</h2>
+      <p class="fs-5 fw-medium mx-auto" style="color: #596A7A !important; max-width: 650px;" style="max-width: 650px;">Immaculate, luxury-tier vehicles for every group size. Driven by professionals, maintained to perfection.</p>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Sedan -->
+      <div class="col-md-6 col-lg-3">
+        <div class="fleet-elite-card h-100 d-flex flex-column" style="background-color: #ffffff !important;">
+          <div class="fleet-elite-img">
+            <div class="fleet-tag">City Class</div>
+            <img src="img/sadan.jpg" alt="Sedan">
+          </div>
+          <h4 class="fw-bold mb-2 fs-4" style="color: #2C3E50 !important;">Sedan Class</h4>
+          <p class="small mb-3" style="color: #596A7A !important;">Dzire, Etios or similar</p>
+          <div class="fleet-specs">
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-user-friends"></i> 4 Seats</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-snowflake"></i> A/C</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-suitcase"></i> 2 Bags</div>
+          </div>
+          <div class="mt-auto fleet-price-box">
+            <div class="fleet-price">&#8377;10<span>/km</span></div>
+            <a href="tel:9878120686" class="fleet-book-btn">Book</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SUV Compact -->
+      <div class="col-md-6 col-lg-3">
+        <div class="fleet-elite-card h-100 d-flex flex-column" style="background-color: #ffffff !important;">
+          <div class="fleet-elite-img">
+            <div class="fleet-tag">Family SUV</div>
+            <img src="img/ertiga.jpg" alt="SUV">
+          </div>
+          <h4 class="fw-bold mb-2 fs-4" style="color: #2C3E50 !important;">Compact SUV</h4>
+          <p class="small mb-3" style="color: #596A7A !important;">Ertiga, Carens or similar</p>
+          <div class="fleet-specs">
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-user-friends"></i> 6 Seats</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-snowflake"></i> A/C</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-suitcase"></i> 3 Bags</div>
+          </div>
+          <div class="mt-auto fleet-price-box">
+            <div class="fleet-price">&#8377;14<span>/km</span></div>
+            <a href="tel:9878120686" class="fleet-book-btn">Book</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Premium SUV -->
+      <div class="col-md-6 col-lg-3">
+        <div class="fleet-elite-card h-100 d-flex flex-column" style="background-color: #ffffff !important;">
+          <div class="fleet-elite-img">
+            <div class="fleet-tag">Executive</div>
+            <img src="img/inova.jpeg" alt="Innova">
+          </div>
+          <h4 class="fw-bold mb-2 fs-4" style="color: #2C3E50 !important;">Premium SUV</h4>
+          <p class="small mb-3" style="color: #596A7A !important;">Innova Crysta</p>
+          <div class="fleet-specs">
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-user-friends"></i> 7 Seats</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-snowflake"></i> A/C</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-suitcase"></i> 4 Bags</div>
+          </div>
+          <div class="mt-auto fleet-price-box">
+            <div class="fleet-price">&#8377;18<span>/km</span></div>
+            <a href="tel:9878120686" class="fleet-book-btn">Book</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Maharaja -->
+      <div class="col-md-6 col-lg-3">
+        <div class="fleet-elite-card h-100 d-flex flex-column" style="background-color: #ffffff !important;">
+          <div class="fleet-elite-img">
+            <div class="fleet-tag">Group Luxury</div>
+            <img src="img/maharaja.jpg" alt="Tempo">
+          </div>
+          <h4 class="fw-bold mb-2 fs-4" style="color: #2C3E50 !important;">Luxury Tempo</h4>
+          <p class="small mb-3" style="color: #596A7A !important;">Maharaja Tempo</p>
+          <div class="fleet-specs">
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-user-friends"></i> 12-17 Seats</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-snowflake"></i> A/C</div>
+            <div class="spec-item" style="color: #596A7A !important;"><i class="fas fa-suitcase"></i> 8+ Bags</div>
+          </div>
+          <div class="mt-auto fleet-price-box">
+            <div class="fleet-price">&#8377;22<span>/km</span></div>
+            <a href="tel:9878120686" class="fleet-book-btn">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+        <a href="carrental.html" class="btn rounded-pill" style="border: 2px solid #2C3E50; color: #2C3E50; transition: all 0.3s ease;" px-5 py-3 fw-bold shadow-sm" style="transition: all 0.3s ease;">
+            Explore Full Fleet Details <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- Travel Quote Section Start -->
+<style>
+.quote-section {
+    background: linear-gradient(135deg, #FFF9F2 0%, #FFF0DD 100%);
+    padding: 80px 0;
+    color: var(--text-main);
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.quote-box {
+    text-align: center;
+    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.quote-icon {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    opacity: 0.6;
+}
+.wanderlust-quote {
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    background: linear-gradient(45deg, var(--primary), #FF8C00, #E85D04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.quote-author {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+    .wanderlust-quote { font-size: 1.8rem; }
+    .quote-section { padding: 50px 0; }
+}
+</style>
+
+<section class="quote-section">
+    <div class="container">
+        <div class="quote-box wow text-center fadeInUp" data-wow-delay="0.1s">
+            <i class="fa fa-quote-left quote-icon"></i>
+            <h2 class="wanderlust-quote">"Sometimes the most scenic roads in life are the detours you didn't mean to take."</h2>
+            <div class="quote-author">&mdash; Angela N. Blount</div>
+        </div>
+    </div>
+</section>
+<!-- Travel Quote Section End -->
+
+<!-- Footer Start -->
 
 <style>
 /* Modern Luxurious Footer */
 .ultra-footer {
-    background: #050a15;
-    color: #e2e8f0;
+    background: var(--bg-light);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
     padding-top: 5rem;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .ultra-footer::before {
     content: '';
@@ -674,20 +1097,18 @@
 .footer-brand {
     font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
     margin-bottom: 1rem;
     display: inline-block;
 }
 .footer-desc {
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
 .footer-heading {
-    color: #ffffff;
+    color: var(--text-main);
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -703,7 +1124,7 @@
     margin-bottom: 0.8rem;
 }
 .ultra-footer-links a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -713,11 +1134,11 @@
 .ultra-footer-links a i {
     font-size: 0.75rem;
     margin-right: 8px;
-    color: #3b82f6;
+    color: var(--primary);
     transition: transform 0.3s;
 }
 .ultra-footer-links a:hover {
-    color: #ffffff;
+    color: var(--text-main);
     transform: translateX(5px);
 }
 .ultra-footer-links a:hover i {
@@ -727,14 +1148,14 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 1.25rem;
-    color: #94a3b8;
+    color: var(--text-muted);
 }
 .contact-icon {
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.1);
-    color: #3b82f6;
+    background: rgba(255, 94, 0, 0.1);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -744,12 +1165,12 @@
     border: 1px solid rgba(37, 99, 235, 0.2);
 }
 .contact-text a {
-    color: #94a3b8;
+    color: var(--text-muted);
     text-decoration: none;
     transition: color 0.3s;
 }
 .contact-text a:hover {
-    color: #ffffff;
+    color: var(--text-main);
 }
 .footer-socials {
     display: flex;
@@ -760,52 +1181,51 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: #e2e8f0;
+    background: rgba(255, 94, 0, 0.05);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-socials a:hover {
-    background: #3b82f6;
-    color: #ffffff;
+    background: var(--secondary);
+    color: var(--text-main);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-    border-color: #3b82f6;
+    box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
+    border-color: var(--primary);
 }
 .map-container {
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     height: 200px;
 }
 .map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: invert(90%) hue-rotate(180deg) contrast(80%); /* Dark map trick */
     transition: filter 0.5s ease;
 }
 .map-container:hover iframe {
-    filter: invert(0%); /* Normal map on hover */
+    filter: brightness(0.9);
 }
 .footer-bottom {
-    background: #020610;
+    background: var(--bg-light);
     padding: 1.5rem 0;
     margin-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .footer-bottom p {
     margin: 0;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 .footer-bottom a {
-    color: #3b82f6;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
 }
@@ -818,7 +1238,7 @@
             <!-- Brand & Info -->
             <div class="col-lg-3 col-md-6">
                 <a href="index.html" class="text-decoration-none">
-                    <span class="footer-brand">BudgetTrips<span style="color: #3b82f6;">.in</span></span>
+                    <span class="footer-brand">BudgetTrips<span style="color: var(--primary);">.in</span></span>
                 </a>
                 <p class="footer-desc">Redefining travel across Punjab and North India. Experience impeccable service, top-tier vehicles, and memories that last a lifetime.</p>
                 <div class="footer-socials">
@@ -849,7 +1269,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Head Office</span>
                         <a href="https://maps.google.com/maps?q=Shop+No.9,+First+Floor,+Ram+Talai+Chownk,+New+Golden+Avenue,+Amritsar" target="_blank">
                             Shop No.9, First Floor, Ram Talai Chownk, New Golden Avenue, Amritsar, Punjab
                         </a>
@@ -859,7 +1279,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">24/7 Support</span>
                         <a href="tel:9878120686">+91 98781 20686</a>
                     </div>
                 </div>
@@ -867,7 +1287,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-text">
-                        <span class="d-block text-white fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
+                        <span class="d-block text-dark fw-bold mb-1" style="font-size: 0.85rem;">Email Us</span>
                         <a href="mailto:info@budgettrips.in">info@budgettrips.in</a>
                     </div>
                 </div>
@@ -906,24 +1326,7 @@
         </div>
     </div>
 </footer>
-
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-white">
-              All rights reserved © 2025 <strong>Budgettrips</strong>
-            </span>
-          </div>
-          <div class="col-md-6 text-center text-md-end text-white">
-            Powered by
-            <a class="border-bottom text-white" href="#">Budgettrips</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Copyright End -->
+<!-- Copyright End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square back-to-top"
